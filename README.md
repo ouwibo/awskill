@@ -8,17 +8,6 @@
 
 ---
 
-## Overview
-
-**254 skills** organized across 8 categories. Compatible with any AI agent — Claude, GPT, Gemini, or custom.
-
-Built on top of:
-- [yaklang/hack-skills](https://github.com/yaklang/hack-skills) — 96 security skills
-- [shuvonsec/claude-bug-bounty](https://github.com/shuvonsec/claude-bug-bounty) — bug bounty workflows
-- [zocomputer/skills](https://github.com/zocomputer/skills) — productivity and dev skills
-
----
-
 ## Quick Start
 
 ```bash
