@@ -1,11 +1,23 @@
 ---
 name: cmd-web3-audit
+<<<<<<< HEAD
 description: Smart contract security audit — runs through 10 bug class checklist (accounting desync, access control, incomplete path, off-by-one, oracle errors, ERC4626, reentrancy, flash loan, signature replay, proxy/upgrade). Applies pre-dive kill signals first. Generates Foundry PoC template for confirmed findings. Usage: /web3-audit <contract.sol>
+=======
+description: Bug bounty slash command — /web3-audit. ---
+description: Smart contract security audit — runs through 10 bug class checklist (accounting desync, access control,
+>>>>>>> 151fd91 (initial commit)
 compatibility: Universal — works with any AI agent
 metadata:
   author: ouwibo
 ---
 
+<<<<<<< HEAD
+=======
+---
+description: Smart contract security audit — runs through 10 bug class checklist (accounting desync, access control, incomplete path, off-by-one, oracle errors, ERC4626, reentrancy, flash loan, signature replay, proxy/upgrade). Applies pre-dive kill signals first. Generates Foundry PoC template for confirmed findings. Usage: /web3-audit <contract.sol>
+---
+
+>>>>>>> 151fd91 (initial commit)
 # /web3-audit
 
 Smart contract security audit using the 10-bug-class methodology.
@@ -216,4 +228,9 @@ contract ExploitTest is Test {
 }
 ```
 
+<<<<<<< HEAD
 Run: `forge test --match-test test_exploit -vvvv`
+=======
+Run: `forge test --match-test test_exploit -vvvv`
+
+>>>>>>> 151fd91 (initial commit)

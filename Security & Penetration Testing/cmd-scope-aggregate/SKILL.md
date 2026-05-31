@@ -1,11 +1,23 @@
 ---
 name: cmd-scope-aggregate
+<<<<<<< HEAD
 description: Pull every in-scope asset for a bug bounty program across HackerOne, Bugcrowd, Intigriti, YesWeHack, and Immunefi in one shot. Uses bbscope when authenticated, otherwise the public bounty-targets-data dump. Output is one host per line, ready to feed into /recon. Usage: /scope-aggregate <program-handle> [--platform h1|bc|it|ywh|imf|all]
+=======
+description: Bug bounty slash command — /scope-aggregate. ---
+description: Pull every in-scope asset for a bug bounty program across HackerOne, Bugcrowd, Intigriti, YesWeHack, an
+>>>>>>> 151fd91 (initial commit)
 compatibility: Universal — works with any AI agent
 metadata:
   author: ouwibo
 ---
 
+<<<<<<< HEAD
+=======
+---
+description: Pull every in-scope asset for a bug bounty program across HackerOne, Bugcrowd, Intigriti, YesWeHack, and Immunefi in one shot. Uses bbscope when authenticated, otherwise the public bounty-targets-data dump. Output is one host per line, ready to feed into /recon. Usage: /scope-aggregate <program-handle> [--platform h1|bc|it|ywh|imf|all]
+---
+
+>>>>>>> 151fd91 (initial commit)
 # /scope-aggregate
 
 Aggregate the full in-scope asset list for a public program without copy-pasting
@@ -49,4 +61,9 @@ reads each line as a pre-resolved scope entry and skips subdomain enumeration
 - Programs with `*.target.com`-style wildcards: aggregator gives you the
   *seed*; still run `/recon target.com` to brute the wildcard.
 - Private programs you cannot install bbscope creds for: bounty-targets-data
+<<<<<<< HEAD
   only covers public scope, so private invites won't appear.
+=======
+  only covers public scope, so private invites won't appear.
+
+>>>>>>> 151fd91 (initial commit)

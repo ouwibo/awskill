@@ -1,11 +1,23 @@
 ---
 name: cmd-token-scan
+<<<<<<< HEAD
 description: Meme coin and token security scan — checks for rug pull vectors (hidden mint, honeypot, fee manipulation, LP lock bypass, authority retention, bonding curve exploits, fake renounce, sandwich amplification). Runs automated token_scanner.py + manual 8-class audit. Usage: /token-scan <contract_path_or_dir> [--chain solana]
+=======
+description: Bug bounty slash command — /token-scan. ---
+description: Meme coin and token security scan — checks for rug pull vectors (hidden mint, honeypot, fee manipulatio
+>>>>>>> 151fd91 (initial commit)
 compatibility: Universal — works with any AI agent
 metadata:
   author: ouwibo
 ---
 
+<<<<<<< HEAD
+=======
+---
+description: Meme coin and token security scan — checks for rug pull vectors (hidden mint, honeypot, fee manipulation, LP lock bypass, authority retention, bonding curve exploits, fake renounce, sandwich amplification). Runs automated token_scanner.py + manual 8-class audit. Usage: /token-scan <contract_path_or_dir> [--chain solana]
+---
+
+>>>>>>> 151fd91 (initial commit)
 # /token-scan
 
 Fast rug pull detection for meme coins and token contracts. Covers EVM (Solidity) and Solana (Rust/Anchor).
@@ -140,4 +152,9 @@ The scanner produces:
 
 ## 5-Minute Rule
 
+<<<<<<< HEAD
 If you've been scanning for 5 minutes and found no red flags across all 8 classes + automated scan → the token is likely clean. Move on. Don't hunt for phantom bugs.
+=======
+If you've been scanning for 5 minutes and found no red flags across all 8 classes + automated scan → the token is likely clean. Move on. Don't hunt for phantom bugs.
+
+>>>>>>> 151fd91 (initial commit)

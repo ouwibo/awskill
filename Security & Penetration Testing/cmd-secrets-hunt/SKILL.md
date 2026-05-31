@@ -1,11 +1,23 @@
 ---
 name: cmd-secrets-hunt
+<<<<<<< HEAD
 description: Hunt leaked credentials in a filesystem path, git history, JS bundles from a recon run, or an entire GitHub org. Wraps trufflehog (verifies live keys against issuer APIs), noseyparker (fast on huge histories), and gitleaks (default rule pack). Falls back to a regex grep if no scanner is installed. Usage: /secrets-hunt --filesystem <dir> | --git <repo> | --js-bundle <recon-dir> | --github-org <org>
+=======
+description: Bug bounty slash command — /secrets-hunt. ---
+description: Hunt leaked credentials in a filesystem path, git history, JS bundles from a recon run, or an entire Gi
+>>>>>>> 151fd91 (initial commit)
 compatibility: Universal — works with any AI agent
 metadata:
   author: ouwibo
 ---
 
+<<<<<<< HEAD
+=======
+---
+description: Hunt leaked credentials in a filesystem path, git history, JS bundles from a recon run, or an entire GitHub org. Wraps trufflehog (verifies live keys against issuer APIs), noseyparker (fast on huge histories), and gitleaks (default rule pack). Falls back to a regex grep if no scanner is installed. Usage: /secrets-hunt --filesystem <dir> | --git <repo> | --js-bundle <recon-dir> | --github-org <org>
+---
+
+>>>>>>> 151fd91 (initial commit)
 # /secrets-hunt
 
 Find leaked API keys, tokens, and credentials — verified when possible.
@@ -54,4 +66,9 @@ When a hit comes back, verify the key works the right way before submitting:
 - `trufflehog.jsonl` — verified hits (high-confidence)
 - `noseyparker.jsonl` — match groups across the history
 - `gitleaks.json` — opinionated default-rule hits
+<<<<<<< HEAD
 - `regex_hits.txt` — regex fallback (manual triage required)
+=======
+- `regex_hits.txt` — regex fallback (manual triage required)
+
+>>>>>>> 151fd91 (initial commit)

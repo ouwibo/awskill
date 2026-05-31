@@ -1,11 +1,23 @@
 ---
 name: cmd-intel
+<<<<<<< HEAD
 description: On-demand intelligence fetch for a target — CVEs, disclosed reports, new features. Wraps learn.py + hunt memory context. Usage: /intel target.com
+=======
+description: Bug bounty slash command — /intel. ---
+description: On-demand intelligence fetch for a target — CVEs, disclosed reports, new features. Wraps learn.py + hun
+>>>>>>> 151fd91 (initial commit)
 compatibility: Universal — works with any AI agent
 metadata:
   author: ouwibo
 ---
 
+<<<<<<< HEAD
+=======
+---
+description: On-demand intelligence fetch for a target — CVEs, disclosed reports, new features. Wraps learn.py + hunt memory context. Usage: /intel target.com
+---
+
+>>>>>>> 151fd91 (initial commit)
 # /intel
 
 Fetch actionable intelligence for a target.
@@ -55,4 +67,9 @@ MEMORY CONTEXT:
 | `learn.py` — GitHub Advisory | Security advisories | No |
 | `learn.py` — HackerOne Hacktivity | Disclosed reports | No |
 | HackerOne MCP (if connected) | Program stats, policy | No (public) |
+<<<<<<< HEAD
 | Hunt memory | Previously tested endpoints | Local files |
+=======
+| Hunt memory | Previously tested endpoints | Local files |
+
+>>>>>>> 151fd91 (initial commit)

@@ -1,11 +1,23 @@
 ---
 name: cmd-pickup
+<<<<<<< HEAD
 description: Pick up a previous hunt on a target — shows hunt history, untested endpoints, and memory-informed suggestions. Usage: /pickup target.com
+=======
+description: Bug bounty slash command — /pickup. ---
+description: Pick up a previous hunt on a target — shows hunt history, untested endpoints, and memory-informed sugge
+>>>>>>> 151fd91 (initial commit)
 compatibility: Universal — works with any AI agent
 metadata:
   author: ouwibo
 ---
 
+<<<<<<< HEAD
+=======
+---
+description: Pick up a previous hunt on a target — shows hunt history, untested endpoints, and memory-informed suggestions. Usage: /pickup target.com
+---
+
+>>>>>>> 151fd91 (initial commit)
 # /pickup
 
 Pick up where you left off on a target.
@@ -59,4 +71,9 @@ Actions:
 ```
 No previous hunt data for target.com.
 Run /recon target.com first, then /hunt target.com.
+<<<<<<< HEAD
 ```
+=======
+```
+
+>>>>>>> 151fd91 (initial commit)

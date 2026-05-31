@@ -1,11 +1,23 @@
 ---
 name: cmd-triage
+<<<<<<< HEAD
 description: Quick 7-Question Gate triage on a finding before writing a report. Kills N/A submissions before they happen. Faster than /validate — for quick go/no-go decisions. Usage: /triage
+=======
+description: Bug bounty slash command — /triage. ---
+description: Quick 7-Question Gate triage on a finding before writing a report. Kills N/A submissions before they ha
+>>>>>>> 151fd91 (initial commit)
 compatibility: Universal — works with any AI agent
 metadata:
   author: ouwibo
 ---
 
+<<<<<<< HEAD
+=======
+---
+description: Quick 7-Question Gate triage on a finding before writing a report. Kills N/A submissions before they happen. Faster than /validate — for quick go/no-go decisions. Usage: /triage
+---
+
+>>>>>>> 151fd91 (initial commit)
 # /triage
 
 Quick triage to decide: submit or kill?
@@ -96,4 +108,9 @@ If you can't build the chain today → KILL IT.
 - "Q7 fails — open redirect alone is not submittable. Chain it with OAuth theft first."
 
 **DOWNGRADE:**
+<<<<<<< HEAD
 - "Q6 — you have 200 status but not actual other-user data. Reproduce with two accounts and show victim's PII in the response before reporting."
+=======
+- "Q6 — you have 200 status but not actual other-user data. Reproduce with two accounts and show victim's PII in the response before reporting."
+
+>>>>>>> 151fd91 (initial commit)

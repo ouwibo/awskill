@@ -1,11 +1,23 @@
 ---
 name: cmd-surface
+<<<<<<< HEAD
 description: Show ranked attack surface for a target based on recon output + hunt memory. Invokes recon-ranker agent. Usage: /surface target.com
+=======
+description: Bug bounty slash command — /surface. ---
+description: Show ranked attack surface for a target based on recon output + hunt memory. Invokes recon-ranker agent
+>>>>>>> 151fd91 (initial commit)
 compatibility: Universal — works with any AI agent
 metadata:
   author: ouwibo
 ---
 
+<<<<<<< HEAD
+=======
+---
+description: Show ranked attack surface for a target based on recon output + hunt memory. Invokes recon-ranker agent. Usage: /surface target.com
+---
+
+>>>>>>> 151fd91 (initial commit)
 # /surface
 
 View the prioritized attack surface for a target.
@@ -52,4 +64,9 @@ Kill List (skip):
 Memory:
 - Pattern from alpha.com (same tech): auth bypass via method override ($800)
 - 3 endpoints tested in previous session, 5 remain
+<<<<<<< HEAD
 ```
+=======
+```
+
+>>>>>>> 151fd91 (initial commit)

@@ -1,11 +1,23 @@
 ---
 name: cmd-arsenal
+<<<<<<< HEAD
 description: Show which external bug-bounty tools are installed on this machine and print install hints for the missing ones. Curated from high-signal repos. Use to bootstrap a fresh box or audit which optional capabilities are wired in. Usage: /arsenal | /arsenal <tool-name>
+=======
+description: Bug bounty slash command — /arsenal. ---
+description: Show which external bug-bounty tools are installed on this machine and print install hints for the miss
+>>>>>>> 151fd91 (initial commit)
 compatibility: Universal — works with any AI agent
 metadata:
   author: ouwibo
 ---
 
+<<<<<<< HEAD
+=======
+---
+description: Show which external bug-bounty tools are installed on this machine and print install hints for the missing ones. Curated from high-signal repos. Use to bootstrap a fresh box or audit which optional capabilities are wired in. Usage: /arsenal | /arsenal <tool-name>
+---
+
+>>>>>>> 151fd91 (initial commit)
 # /arsenal
 
 Inspect the external tool inventory used by this plugin.
@@ -46,4 +58,9 @@ if _have nuclei; then nuclei -l hosts.txt -severity high; fi
 ```
 
 Use `_have <tool>` rather than `command -v` so the install-hint table stays the
+<<<<<<< HEAD
 single source of truth for what is and isn't wired in.
+=======
+single source of truth for what is and isn't wired in.
+
+>>>>>>> 151fd91 (initial commit)

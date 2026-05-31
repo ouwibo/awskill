@@ -1,11 +1,23 @@
 ---
 name: cmd-memory-gc
+<<<<<<< HEAD
 description: Inspect or rotate hunt-memory JSONL files (audit.jsonl, patterns.jsonl, journal.jsonl). Caps file size and keeps N rotated backups so memory does not grow unbounded.
+=======
+description: Bug bounty slash command — /memory-gc. ---
+description: Inspect or rotate hunt-memory JSONL files (audit.jsonl, patterns.jsonl, journal.jsonl). Caps file size
+>>>>>>> 151fd91 (initial commit)
 compatibility: Universal — works with any AI agent
 metadata:
   author: ouwibo
 ---
 
+<<<<<<< HEAD
+=======
+---
+description: Inspect or rotate hunt-memory JSONL files (audit.jsonl, patterns.jsonl, journal.jsonl). Caps file size and keeps N rotated backups so memory does not grow unbounded.
+---
+
+>>>>>>> 151fd91 (initial commit)
 # /memory-gc
 
 Garbage-collect the hunt-memory directory. Reports current sizes, rotates oversized files past a configurable cap, or purges old backups.
@@ -57,4 +69,9 @@ Auto-rotation fires automatically in two places:
 1. **On every write** — inside `AuditLog.log()` and `PatternDB.save()` when the next append would exceed the cap.
 2. **On session end** — a `Stop` hook in `.claude/settings.json` runs `python3 -m tools.memory_gc --rotate` so long sessions that wrote a lot but never crossed the cap mid-session still get cleaned up.
 
+<<<<<<< HEAD
 So this slash command is mainly for ad-hoc reporting (`/memory-gc` with no args) and manual cleanup of accumulated backups (`/memory-gc --purge-backups`).
+=======
+So this slash command is mainly for ad-hoc reporting (`/memory-gc` with no args) and manual cleanup of accumulated backups (`/memory-gc --purge-backups`).
+
+>>>>>>> 151fd91 (initial commit)

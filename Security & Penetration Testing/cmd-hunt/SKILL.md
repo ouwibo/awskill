@@ -1,11 +1,23 @@
 ---
 name: cmd-hunt
+<<<<<<< HEAD
 description: Active vulnerability hunt against a target by invoking tools/hunt.py (which calls vuln_scanner.sh against recon/<target>/). Auto-runs recon first if no recon dir exists. Usage: /hunt target.com
+=======
+description: Bug bounty slash command — /hunt. ---
+description: Active vulnerability hunt against a target by invoking tools/hunt.py (which calls vuln_scanner.sh again
+>>>>>>> 151fd91 (initial commit)
 compatibility: Universal — works with any AI agent
 metadata:
   author: ouwibo
 ---
 
+<<<<<<< HEAD
+=======
+---
+description: Active vulnerability hunt against a target by invoking tools/hunt.py (which calls vuln_scanner.sh against recon/<target>/). Auto-runs recon first if no recon dir exists. Usage: /hunt target.com
+---
+
+>>>>>>> 151fd91 (initial commit)
 # /hunt
 
 Active vulnerability hunting on a target. **Always invoke the production script directly** — do not re-interpret the methodology below as instructions to execute step-by-step. The methodology is reference material; the script is the entry point.
@@ -290,4 +302,9 @@ Do not describe what to do — show the command.
 
 ## Auto-Memory (runs at session end)
 
+<<<<<<< HEAD
 When the hunt session ends, run `/remember` to log a summary to hunt memory so `/pickup` picks it up next time. Runs silently — non-fatal. Keeps memory populated without requiring a manual note.
+=======
+When the hunt session ends, run `/remember` to log a summary to hunt memory so `/pickup` picks it up next time. Runs silently — non-fatal. Keeps memory populated without requiring a manual note.
+
+>>>>>>> 151fd91 (initial commit)

@@ -1,11 +1,23 @@
 ---
 name: cmd-chain
+<<<<<<< HEAD
 description: Build an exploit chain — given bug A, finds B and C to combine for higher severity and payout. Knows common chain patterns: IDOR→ATO, SSRF→cloud metadata, XSS→ATO, open redirect→OAuth theft, S3→bundle→secret→OAuth. Usage: /chain
+=======
+description: Bug bounty slash command — /chain. ---
+description: Build an exploit chain — given bug A, finds B and C to combine for higher severity and payout. Knows co
+>>>>>>> 151fd91 (initial commit)
 compatibility: Universal — works with any AI agent
 metadata:
   author: ouwibo
 ---
 
+<<<<<<< HEAD
+=======
+---
+description: Build an exploit chain — given bug A, finds B and C to combine for higher severity and payout. Knows common chain patterns: IDOR→ATO, SSRF→cloud metadata, XSS→ATO, open redirect→OAuth theft, S3→bundle→secret→OAuth. Usage: /chain
+---
+
+>>>>>>> 151fd91 (initial commit)
 # /chain
 
 Build an A→B→C exploit chain for higher severity and payout.
@@ -135,4 +147,9 @@ If 3 consecutive B candidates fail Gate 0 → cluster is dry, stop
 - You've been on B for 30+ min with no PoC
 - You're on your 4th "maybe" candidate
 - B needs 3+ simultaneous preconditions
+<<<<<<< HEAD
 - You keep saying "this could lead to..." without an HTTP request
+=======
+- You keep saying "this could lead to..." without an HTTP request
+
+>>>>>>> 151fd91 (initial commit)

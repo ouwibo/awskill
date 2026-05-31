@@ -1,11 +1,23 @@
 ---
 name: cmd-scan-cves
+<<<<<<< HEAD
 description: Run a focused nuclei CVE sweep against a host or recon directory, optionally filtered by year. Runs log4j-scan in parallel when installed for legacy enterprise stacks. Usage: /scan-cves <host-or-file> [--year 2024] | /scan-cves --recon <recon-dir>
+=======
+description: Bug bounty slash command — /scan-cves. ---
+description: Run a focused nuclei CVE sweep against a host or recon directory, optionally filtered by year. Runs log
+>>>>>>> 151fd91 (initial commit)
 compatibility: Universal — works with any AI agent
 metadata:
   author: ouwibo
 ---
 
+<<<<<<< HEAD
+=======
+---
+description: Run a focused nuclei CVE sweep against a host or recon directory, optionally filtered by year. Runs log4j-scan in parallel when installed for legacy enterprise stacks. Usage: /scan-cves <host-or-file> [--year 2024] | /scan-cves --recon <recon-dir>
+---
+
+>>>>>>> 151fd91 (initial commit)
 # /scan-cves
 
 Targeted nuclei scan of the `cve/` template directory plus optional log4j-scan.
@@ -43,4 +55,9 @@ iterating quickly.
 2. Check program scope and reward table; many CVEs are explicitly out-of-scope
    if the program already disclosed them or is mid-patch.
 3. Provide a non-destructive PoC: a single request that proves the version is
+<<<<<<< HEAD
    vulnerable, not a working exploit chain.
+=======
+   vulnerable, not a working exploit chain.
+
+>>>>>>> 151fd91 (initial commit)

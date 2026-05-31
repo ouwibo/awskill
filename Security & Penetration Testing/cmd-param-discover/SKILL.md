@@ -1,11 +1,23 @@
 ---
 name: cmd-param-discover
+<<<<<<< HEAD
 description: Discover hidden HTTP parameters on a URL or list of URLs using Arjun (or x8 fallback). Hidden params are gold for IDOR, SSRF, LFI, redirect, and authorization bypass — often missed by automated scanners. Usage: /param-discover <url> | /param-discover -l <urls-file>
+=======
+description: Bug bounty slash command — /param-discover. ---
+description: Discover hidden HTTP parameters on a URL or list of URLs using Arjun (or x8 fallback). Hidden params ar
+>>>>>>> 151fd91 (initial commit)
 compatibility: Universal — works with any AI agent
 metadata:
   author: ouwibo
 ---
 
+<<<<<<< HEAD
+=======
+---
+description: Discover hidden HTTP parameters on a URL or list of URLs using Arjun (or x8 fallback). Hidden params are gold for IDOR, SSRF, LFI, redirect, and authorization bypass — often missed by automated scanners. Usage: /param-discover <url> | /param-discover -l <urls-file>
+---
+
+>>>>>>> 151fd91 (initial commit)
 # /param-discover
 
 Find HTTP parameters the application accepts but doesn't link from any visible
@@ -46,4 +58,9 @@ targeted testing.
 
 `findings/params/<timestamp>/`:
 - `arjun.json` / `arjun_summary.txt` — endpoint → discovered params
+<<<<<<< HEAD
 - `x8.txt` — diff-based hits when arjun is unavailable
+=======
+- `x8.txt` — diff-based hits when arjun is unavailable
+
+>>>>>>> 151fd91 (initial commit)
