@@ -1,0 +1,67 @@
+{
+  "name": "@ouwibo/awskill",
+  "version": "1.0.0",
+  "description": "Universal AI agent skill arsenal for bug bounty hunters and crypto researchers.",
+  "license": "MIT",
+  "author": "ouwibo",
+  "homepage": "https://github.com/ouwibo/awskill#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ouwibo/awskill.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ouwibo/awskill/issues"
+  },
+  "type": "module",
+  "bin": {
+    "awskill": "bin/awskill.js"
+  },
+  "files": [
+    "bin/",
+    "scripts/",
+    "AI & Agent Automation/",
+    "Content & Documents/",
+    "Developer Tools/",
+    "Finance & Crypto/",
+    "Productivity & Utilities/",
+    "SEO & Marketing/",
+    "Security & Penetration Testing/",
+    "Web & Frontend Development/",
+    "skills.json",
+    "install.sh",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "SECURITY.md",
+    "CONTRIBUTING.md",
+    "!**/__pycache__/**",
+    "!**/*.pyc",
+    "!*.tgz"
+  ],
+  "scripts": {
+    "awskill": "python3 scripts/awskill.py",
+    "stats": "python3 scripts/awskill.py --stats",
+    "validate": "python3 scripts/tools/validate_skills.py && python3 -m compileall -q scripts",
+    "pack:test": "npm pack --dry-run",
+    "clean:package": "find . -type d -name __pycache__ -prune -exec rm -rf {} + && find . -type f -name \"*.pyc\" -delete",
+    "prepack": "npm run clean:package"
+  },
+  "keywords": [
+    "ai-agent",
+    "skills",
+    "bug-bounty",
+    "security",
+    "recon",
+    "crypto",
+    "web3",
+    "penetration-testing"
+  ],
+  "engines": {
+    "node": ">=18",
+    "npm": ">=9"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "public"
+  }
+}
