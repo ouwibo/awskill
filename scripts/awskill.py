@@ -1,116 +1,168 @@
 #!/usr/bin/env python3
 """
 awskill - Skill Index & Launcher
-Usage: python3 scripts/awskill.py [--list] [--cat <category>] [--search <query>] [--run <skill>]
-"""
-import os, sys, re, subprocess
 
-BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+Usage:
+    python3 scripts/awskill.py --stats
+    python3 scripts/awskill.py --list [--cat <category>]
+    python3 scripts/awskill.py --search <query>
+    python3 scripts/awskill.py --run <skill>
+"""
+
+import argparse
+import os
+import subprocess
+import sys
+from pathlib import Path
+
+BASE = Path(__file__).resolve().parent.parent
+IGNORED_ROOT_DIRS = {".git", "scripts", "__pycache__"}
+
+
+def extract_description(content):
+    """Return the first description from a SKILL.md frontmatter block."""
+    lines = content.splitlines()
+    in_description = False
+
+    for line in lines:
+        if line.startswith("description:"):
+            value = line[len("description:"):].strip()
+            if value not in {">-", ">", "|", ""}:
+                return value
+            in_description = True
+            continue
+
+        if in_description:
+            if line.startswith("  ") and line.strip():
+                return line.strip()
+            if line and not line.startswith(" "):
+                break
+
+    return ""
+
 
 def get_all_skills():
     skills = []
-    for cat in sorted(os.listdir(BASE)):
-        cat_path = os.path.join(BASE, cat)
-        if not os.path.isdir(cat_path) or cat == "scripts": continue
-        for skill in sorted(os.listdir(cat_path)):
-            skill_path = os.path.join(cat_path, skill)
-            if not os.path.isdir(skill_path): continue
-            skill_md = os.path.join(skill_path, "SKILL.md")
-            if not os.path.exists(skill_md): continue
-            content = open(skill_md, errors='ignore').read()
-            desc = ""
-            in_block = False
-            for line in content.split('\n'):
-                if line.startswith('description:'):
-                    val = line[12:].strip()
-                    if val not in ['>-', '>', '|', '']:
-                        desc = val; break
-                    else: in_block = True
-                elif in_block and line.startswith('  '):
-                    desc = line.strip(); break
-            scripts = []
-            sc = os.path.join(skill_path, "scripts")
-            if os.path.isdir(sc): scripts = os.listdir(sc)
-            skills.append({"name": skill, "category": cat, "desc": desc, "scripts": scripts, "path": skill_path})
+    for category_path in sorted(p for p in BASE.iterdir() if p.is_dir()):
+        if category_path.name in IGNORED_ROOT_DIRS:
+            continue
+
+        for skill_path in sorted(p for p in category_path.iterdir() if p.is_dir()):
+            skill_md = skill_path / "SKILL.md"
+            if not skill_md.exists():
+                continue
+
+            content = skill_md.read_text(encoding="utf-8", errors="ignore")
+            scripts_path = skill_path / "scripts"
+            scripts = sorted(os.listdir(scripts_path)) if scripts_path.is_dir() else []
+            skills.append(
+                {
+                    "name": skill_path.name,
+                    "category": category_path.name,
+                    "desc": extract_description(content),
+                    "scripts": scripts,
+                    "path": str(skill_path),
+                }
+            )
     return skills
+
 
 def cmd_list(cat_filter=None):
     skills = get_all_skills()
     current_cat = None
-    for s in skills:
-        if cat_filter and cat_filter.lower() not in s["category"].lower(): continue
-        if s["category"] != current_cat:
-            print(f"\n{'='*60}")
-            print(f"  {s['category']}")
-            print(f"{'='*60}")
-            current_cat = s["category"]
-        has_scripts = f"[{len(s['scripts'])} script(s)]" if s['scripts'] else ""
-        print(f"  {s['name']:<45} {has_scripts}")
-        if s['desc']:
-            print(f"    {s['desc'][:80]}")
+    for skill in skills:
+        if cat_filter and cat_filter.lower() not in skill["category"].lower():
+            continue
+        if skill["category"] != current_cat:
+            print(f"\n{'=' * 60}")
+            print(f"  {skill['category']}")
+            print(f"{'=' * 60}")
+            current_cat = skill["category"]
+        has_scripts = f"[{len(skill['scripts'])} script(s)]" if skill["scripts"] else ""
+        print(f"  {skill['name']:<45} {has_scripts}")
+        if skill["desc"]:
+            print(f"    {skill['desc'][:80]}")
+
 
 def cmd_search(query):
     skills = get_all_skills()
     q = query.lower()
     print(f"\nSearch results for '{query}':\n")
     found = 0
-    for s in skills:
-        if q in s['name'].lower() or q in s['desc'].lower() or q in s['category'].lower():
-            print(f"  [{s['category']}] {s['name']}")
-            print(f"    {s['desc'][:80]}")
+    for skill in skills:
+        if q in skill["name"].lower() or q in skill["desc"].lower() or q in skill["category"].lower():
+            print(f"  [{skill['category']}] {skill['name']}")
+            print(f"    {skill['desc'][:80]}")
             found += 1
     print(f"\n{found} skills found.")
 
+
 def cmd_stats():
     skills = get_all_skills()
-    cats = {}
-    for s in skills:
-        cats[s['category']] = cats.get(s['category'], 0) + 1
+    categories = {}
+    for skill in skills:
+        categories[skill["category"]] = categories.get(skill["category"], 0) + 1
     print(f"\nTotal: {len(skills)} skills\n")
-    for c, n in sorted(cats.items(), key=lambda x: -x[1]):
-        print(f"  {n:>3}  {c}")
+    for category, total in sorted(categories.items(), key=lambda item: (-item[1], item[0])):
+        print(f"  {total:>3}  {category}")
+
 
 def cmd_run(skill_name):
     skills = get_all_skills()
-    match = [s for s in skills if s['name'] == skill_name]
+    match = [skill for skill in skills if skill["name"] == skill_name]
     if not match:
         print(f"Skill '{skill_name}' not found. Use --search to find it.")
-        return
-    s = match[0]
-    print(f"\nRunning skill: {s['name']}")
-    print(f"Category: {s['category']}")
-    print(f"Path: {s['path']}\n")
-    sc = os.path.join(s['path'], 'scripts')
-    if os.path.isdir(sc):
-        for f in sorted(os.listdir(sc)):
-            fp = os.path.join(sc, f)
-            if f.endswith('.ts'):
-                print(f"Script: {f}")
-                subprocess.run(['bun', fp, '--help'], cwd=sc)
-                break
-            elif f.endswith('.py'):
-                print(f"Script: {f}")
-                subprocess.run([sys.executable, fp, '--help'], cwd=sc)
-                break
+        return 1
+
+    skill = match[0]
+    print(f"\nRunning skill: {skill['name']}")
+    print(f"Category: {skill['category']}")
+    print(f"Path: {skill['path']}\n")
+    scripts_path = Path(skill["path"]) / "scripts"
+    if scripts_path.is_dir():
+        for script_name in sorted(os.listdir(scripts_path)):
+            script_path = scripts_path / script_name
+            if script_name.endswith(".ts"):
+                print(f"Script: {script_name}")
+                return subprocess.run(["bun", str(script_path), "--help"], cwd=scripts_path).returncode
+            if script_name.endswith(".py"):
+                print(f"Script: {script_name}")
+                return subprocess.run([sys.executable, str(script_path), "--help"], cwd=scripts_path).returncode
+        print("No runnable Python or TypeScript scripts found.")
     else:
         print("No scripts — skill uses built-in tools. Read SKILL.md:")
-        print(open(os.path.join(s['path'], 'SKILL.md'), errors='ignore').read()[:500])
+        print((Path(skill["path"]) / "SKILL.md").read_text(encoding="utf-8", errors="ignore")[:500])
+    return 0
 
-if __name__ == '__main__':
-    args = sys.argv[1:]
-    if not args or '--stats' in args:
+
+def parse_args(argv):
+    parser = argparse.ArgumentParser(description="Browse, search, and run awskill skills.")
+    parser.add_argument("query", nargs="*", help="Search terms used when no explicit command is provided.")
+    parser.add_argument("--stats", action="store_true", help="Show repository skill counts.")
+    parser.add_argument("--list", action="store_true", help="List skills, optionally filtered by --cat.")
+    parser.add_argument("--cat", help="Filter the skill list by category.")
+    parser.add_argument("--search", help="Search skills by name, category, or description.")
+    parser.add_argument("--run", help="Run the first helper script for an exact skill name.")
+    return parser.parse_args(argv)
+
+
+def main(argv=None):
+    args = parse_args(argv or sys.argv[1:])
+    if args.stats or not any([args.list, args.cat, args.search, args.run, args.query]):
         cmd_stats()
-    elif '--list' in args:
-        cat = args[args.index('--list')+1] if '--cat' in args else None
-        cmd_list(cat)
-    elif '--search' in args:
-        idx = args.index('--search')
-        cmd_search(args[idx+1] if idx+1 < len(args) else '')
-    elif '--run' in args:
-        idx = args.index('--run')
-        cmd_run(args[idx+1] if idx+1 < len(args) else '')
-    elif '--cat' in args:
-        idx = args.index('--cat')
-        cmd_list(args[idx+1] if idx+1 < len(args) else None)
-    else:
-        cmd_search(' '.join(args))
+        return 0
+    if args.list or args.cat:
+        cmd_list(args.cat)
+        return 0
+    if args.search is not None:
+        cmd_search(args.search)
+        return 0
+    if args.run is not None:
+        return cmd_run(args.run)
+
+    cmd_search(" ".join(args.query))
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

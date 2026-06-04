@@ -1,14 +1,9 @@
 ---
 name: cmd-takeover
-description: Bug bounty slash command — /takeover. ---
-description: Scan subdomains for takeover candidates (dangling CNAMEs to GitHub Pages, S3, Heroku, Shopify, etc.). W
+description: Scan subdomains for takeover candidates (dangling CNAMEs to GitHub Pages, S3, Heroku, Shopify, etc.). Wraps dnsReaper (best signal) and subjack (fast Go fallback). With no scanner installed, runs a built-in fingerprint grep over a curated set of providers. Usage: /takeover <subdomains-file> | /takeover --recon <recon-dir>
 compatibility: Universal — works with any AI agent
 metadata:
   author: ouwibo
----
-
----
-description: Scan subdomains for takeover candidates (dangling CNAMEs to GitHub Pages, S3, Heroku, Shopify, etc.). Wraps dnsReaper (best signal) and subjack (fast Go fallback). With no scanner installed, runs a built-in fingerprint grep over a curated set of providers. Usage: /takeover <subdomains-file> | /takeover --recon <recon-dir>
 ---
 
 # /takeover
@@ -47,4 +42,3 @@ Before submitting:
 
 `findings/takeover/<timestamp>/` with raw scanner JSON / text plus a
 `fingerprint_grep.txt` summary of suspicious responses.
-

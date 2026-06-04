@@ -1,14 +1,9 @@
 ---
 name: cmd-bypass-403
-description: Bug bounty slash command — /bypass-403. ---
-description: Probe a 403/401 endpoint with the most-paid bypass tricks (header injection, path encoding, method swap
+description: Probe a 403/401 endpoint with the most-paid bypass tricks (header injection, path encoding, method swap). Wraps byp4xx when installed; otherwise runs a built-in matrix of ~20 techniques. Usage: /bypass-403 <url> | /bypass-403 -l <urls-file>
 compatibility: Universal — works with any AI agent
 metadata:
   author: ouwibo
----
-
----
-description: Probe a 403/401 endpoint with the most-paid bypass tricks (header injection, path encoding, method swap). Wraps byp4xx when installed; otherwise runs a built-in matrix of ~20 techniques. Usage: /bypass-403 <url> | /bypass-403 -l <urls-file>
 ---
 
 # /bypass-403
@@ -48,4 +43,3 @@ built-in fallback runs the same set with `curl`.
 `findings/bypass/<timestamp>/`:
 - `byp4xx.txt` — full upstream-tool output, OR
 - `bypass_hits.txt` — `method|url|header|status` lines for built-in fallback hits
-

@@ -1,14 +1,9 @@
 ---
 name: cmd-triage
-description: Bug bounty slash command — /triage. ---
-description: Quick 7-Question Gate triage on a finding before writing a report. Kills N/A submissions before they ha
+description: Quick 7-Question Gate triage on a finding before writing a report. Kills N/A submissions before they happen. Faster than /validate — for quick go/no-go decisions. Usage: /triage
 compatibility: Universal — works with any AI agent
 metadata:
   author: ouwibo
----
-
----
-description: Quick 7-Question Gate triage on a finding before writing a report. Kills N/A submissions before they happen. Faster than /validate — for quick go/no-go decisions. Usage: /triage
 ---
 
 # /triage
@@ -102,4 +97,3 @@ If you can't build the chain today → KILL IT.
 
 **DOWNGRADE:**
 - "Q6 — you have 200 status but not actual other-user data. Reproduce with two accounts and show victim's PII in the response before reporting."
-

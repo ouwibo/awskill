@@ -1,14 +1,9 @@
 ---
 name: cmd-report
-description: Bug bounty slash command — /report. ---
-description: Write a submission-ready bug bounty report. Generates H1/Bugcrowd/Intigriti/Immunefi format with CVSS 3
+description: Write a submission-ready bug bounty report. Generates H1/Bugcrowd/Intigriti/Immunefi format with CVSS 3.1 score, proof of concept, impact statement, and remediation. Run /validate first. Usage: /report
 compatibility: Universal — works with any AI agent
 metadata:
   author: ouwibo
----
-
----
-description: Write a submission-ready bug bounty report. Generates H1/Bugcrowd/Intigriti/Immunefi format with CVSS 3.1 score, proof of concept, impact statement, and remediation. Run /validate first. Usage: /report
 ---
 
 # /report
@@ -122,4 +117,3 @@ Use when payout is being downgraded:
 [ ] Severity matches impact (no overclaiming)
 [ ] NEVER used "could potentially"
 ```
-

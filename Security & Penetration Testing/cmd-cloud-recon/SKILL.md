@@ -1,14 +1,9 @@
 ---
 name: cmd-cloud-recon
-description: Bug bounty slash command — /cloud-recon. ---
-description: Sweep cloud assets for a target — public S3/Azure/GCP buckets via S3Scanner and cloud_enum, plus CloudF
+description: Sweep cloud assets for a target — public S3/Azure/GCP buckets via S3Scanner and cloud_enum, plus CloudFlare-bypassed origin IPs via CloudFail (or built-in DNS-history fallback). Use --keyword for storage discovery and --cf-bypass to find an origin IP behind CloudFlare. Usage: /cloud-recon --keyword <name> | /cloud-recon --cf-bypass <domain>
 compatibility: Universal — works with any AI agent
 metadata:
   author: ouwibo
----
-
----
-description: Sweep cloud assets for a target — public S3/Azure/GCP buckets via S3Scanner and cloud_enum, plus CloudFlare-bypassed origin IPs via CloudFail (or built-in DNS-history fallback). Use --keyword for storage discovery and --cf-bypass to find an origin IP behind CloudFlare. Usage: /cloud-recon --keyword <name> | /cloud-recon --cf-bypass <domain>
 ---
 
 # /cloud-recon
@@ -50,4 +45,3 @@ typical origin-IP leak symptom.
 - `s3scanner.txt` — buckets that exist + their permission bits
 - `cloud_enum.txt` — multi-cloud OSINT hits
 - `cloudfail.txt` or `non_cf_ips.txt` — origin-IP candidates
-

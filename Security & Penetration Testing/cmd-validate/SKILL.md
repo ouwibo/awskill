@@ -1,14 +1,9 @@
 ---
 name: cmd-validate
-description: Bug bounty slash command — /validate. ---
-description: Validate a finding — runs 7-Question Gate + 4-gate checklist. Kills weak findings before report writing
+description: Validate a finding — runs 7-Question Gate + 4-gate checklist. Kills weak findings before report writing. Prevents N/A submissions that hurt validity ratio. Usage: /validate
 compatibility: Universal — works with any AI agent
 metadata:
   author: ouwibo
----
-
----
-description: Validate a finding — runs 7-Question Gate + 4-gate checklist. Kills weak findings before report writing. Prevents N/A submissions that hurt validity ratio. Usage: /validate
 ---
 
 # /validate
@@ -140,4 +135,3 @@ If no chain → KILL IT. If chain confirmed → report both together.
 **KILL:** "Q[N] fails because [reason]. Kill this finding. Reason: [explanation]. Move on."
 
 **DOWNGRADE:** "Q6 only shows technical possibility. Downgrade from High to Medium. Requires showing actual data exfil in PoC."
-

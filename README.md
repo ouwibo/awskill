@@ -3,7 +3,7 @@
 > Universal AI agent skill arsenal for bug bounty hunters and crypto researchers.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Skills](https://img.shields.io/badge/skills-254-blue.svg)](#categories)
+[![Skills](https://img.shields.io/badge/skills-248-blue.svg)](#categories)
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
 ---
@@ -30,7 +30,7 @@ bash install.sh
 | [SEO & Marketing](SEO%20%26%20Marketing/) | 13 |
 | [Finance & Crypto](Finance%20%26%20Crypto/) | 12 |
 | [Productivity & Utilities](Productivity%20%26%20Utilities/) | 12 |
-| **Total** | **254** |
+| **Total** | **248** |
 
 ---
 
@@ -80,6 +80,12 @@ python3 scripts/awskill.py --list
 python3 scripts/awskill.py --search xss
 python3 scripts/awskill.py --cat "Security & Penetration Testing"
 python3 scripts/awskill.py --run bug-bounty
+```
+
+### Validate Repository Metadata
+```bash
+python3 scripts/tools/validate_skills.py
+python3 -m compileall -q .
 ```
 
 ---

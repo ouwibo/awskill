@@ -1,14 +1,9 @@
 ---
 name: cmd-autopilot
-description: Bug bounty slash command — /autopilot. ---
-description: Run autonomous hunt loop on a target — scope check → recon → rank surface → hunt → validate → report wi
+description: Run autonomous hunt loop on a target — scope check → recon → rank surface → hunt → validate → report with configurable checkpoints. Usage: /autopilot target.com [--paranoid|--normal|--yolo]
 compatibility: Universal — works with any AI agent
 metadata:
   author: ouwibo
----
-
----
-description: Run autonomous hunt loop on a target — scope check → recon → rank surface → hunt → validate → report with configurable checkpoints. Usage: /autopilot target.com [--paranoid|--normal|--yolo]
 ---
 
 # /autopilot
@@ -96,4 +91,3 @@ without losing findings.
 - Run `/remember` to log successful patterns to hunt memory
 - Run `/pickup target.com` next time to pick up where you left off
 - Check `hunt-memory/audit.jsonl` for a full request log
-

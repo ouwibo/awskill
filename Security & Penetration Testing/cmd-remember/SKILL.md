@@ -1,14 +1,9 @@
 ---
 name: cmd-remember
-description: Bug bounty slash command — /remember. ---
-description: Log current finding or successful pattern to hunt memory. Auto-fills from /validate output if available
+description: Log current finding or successful pattern to hunt memory. Auto-fills from /validate output if available. Usage: /remember
 compatibility: Universal — works with any AI agent
 metadata:
   author: ouwibo
----
-
----
-description: Log current finding or successful pattern to hunt memory. Auto-fills from /validate output if available. Usage: /remember
 ---
 
 # /remember
@@ -69,4 +64,3 @@ Save to hunt memory? [y/n]
 - Next time you hunt a target with similar tech stack, your successful patterns are suggested first
 - `/pickup target.com` shows which endpoints you've tested and which remain
 - Cross-target learning: patterns from target A inform hunting on target B
-
