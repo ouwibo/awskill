@@ -1,14 +1,9 @@
 ---
 name: cmd-scan-cves
-description: Bug bounty slash command — /scan-cves. ---
-description: Run a focused nuclei CVE sweep against a host or recon directory, optionally filtered by year. Runs log
+description: Run a focused nuclei CVE sweep against a host or recon directory, optionally filtered by year. Runs log4j-scan in parallel when installed for legacy enterprise stacks. Usage: /scan-cves <host-or-file> [--year 2024] | /scan-cves --recon <recon-dir>
 compatibility: Universal — works with any AI agent
 metadata:
   author: ouwibo
----
-
----
-description: Run a focused nuclei CVE sweep against a host or recon directory, optionally filtered by year. Runs log4j-scan in parallel when installed for legacy enterprise stacks. Usage: /scan-cves <host-or-file> [--year 2024] | /scan-cves --recon <recon-dir>
 ---
 
 # /scan-cves
@@ -49,4 +44,3 @@ iterating quickly.
    if the program already disclosed them or is mid-patch.
 3. Provide a non-destructive PoC: a single request that proves the version is
    vulnerable, not a working exploit chain.
-

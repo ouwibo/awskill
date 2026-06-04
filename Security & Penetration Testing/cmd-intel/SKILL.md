@@ -1,14 +1,9 @@
 ---
 name: cmd-intel
-description: Bug bounty slash command — /intel. ---
-description: On-demand intelligence fetch for a target — CVEs, disclosed reports, new features. Wraps learn.py + hun
+description: On-demand intelligence fetch for a target — CVEs, disclosed reports, new features. Wraps learn.py + hunt memory context. Usage: /intel target.com
 compatibility: Universal — works with any AI agent
 metadata:
   author: ouwibo
----
-
----
-description: On-demand intelligence fetch for a target — CVEs, disclosed reports, new features. Wraps learn.py + hunt memory context. Usage: /intel target.com
 ---
 
 # /intel
@@ -61,4 +56,3 @@ MEMORY CONTEXT:
 | `learn.py` — HackerOne Hacktivity | Disclosed reports | No |
 | HackerOne MCP (if connected) | Program stats, policy | No (public) |
 | Hunt memory | Previously tested endpoints | Local files |
-

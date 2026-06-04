@@ -1,14 +1,9 @@
 ---
 name: cmd-scope
-description: Bug bounty slash command — /scope. ---
-description: Check if a target asset is in scope for the program before hunting or submitting. Reads program scope p
+description: Check if a target asset is in scope for the program before hunting or submitting. Reads program scope page, checks asset against in-scope and out-of-scope lists, verifies the asset is owned by the target organization. Usage: /scope <asset>
 compatibility: Universal — works with any AI agent
 metadata:
   author: ouwibo
----
-
----
-description: Check if a target asset is in scope for the program before hunting or submitting. Reads program scope page, checks asset against in-scope and out-of-scope lists, verifies the asset is owned by the target organization. Usage: /scope <asset>
 ---
 
 # /scope
@@ -113,4 +108,3 @@ Before testing, confirm the program has a safe harbor clause:
 Look for: "We will not pursue legal action against security researchers who..."
 If no safe harbor → be more careful → stick strictly to documented scope
 ```
-

@@ -1,14 +1,9 @@
 ---
 name: cmd-recon
-description: Bug bounty slash command — /recon. ---
-description: Run the full recon pipeline by invoking tools/recon_engine.sh — subdomain enum (subfinder + amass + crt
+description: Run the full recon pipeline by invoking tools/recon_engine.sh — subdomain enum (subfinder + amass + crt.sh + wayback), httpx live host probing with tech detection, nmap port scan, gau URL collection, JS analysis, ffuf directory fuzzing, parameter discovery, config exposure check, CI/CD workflow scan. Outputs to recon/<target>/. Handles FQDN, IP, CIDR, and file-of-hosts targets automatically. Usage: /recon target.com
 compatibility: Universal — works with any AI agent
 metadata:
   author: ouwibo
----
-
----
-description: Run the full recon pipeline by invoking tools/recon_engine.sh — subdomain enum (subfinder + amass + crt.sh + wayback), httpx live host probing with tech detection, nmap port scan, gau URL collection, JS analysis, ffuf directory fuzzing, parameter discovery, config exposure check, CI/CD workflow scan. Outputs to recon/<target>/. Handles FQDN, IP, CIDR, and file-of-hosts targets automatically. Usage: /recon target.com
 ---
 
 # /recon
@@ -119,4 +114,3 @@ The pipeline in `tools/recon_engine.sh` runs these phases (numbers may shift; ch
 10. **CI/CD scan** — sisakulint against any GitHub Actions workflows discovered.
 
 For the IDOR / SSRF / GraphQL / SSTI / etc. active-testing playbooks, see `/hunt` and its methodology section.
-

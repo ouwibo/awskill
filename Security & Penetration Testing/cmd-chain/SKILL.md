@@ -1,14 +1,9 @@
 ---
 name: cmd-chain
-description: Bug bounty slash command — /chain. ---
-description: Build an exploit chain — given bug A, finds B and C to combine for higher severity and payout. Knows co
+description: Build an exploit chain — given bug A, finds B and C to combine for higher severity and payout. Knows common chain patterns: IDOR→ATO, SSRF→cloud metadata, XSS→ATO, open redirect→OAuth theft, S3→bundle→secret→OAuth. Usage: /chain
 compatibility: Universal — works with any AI agent
 metadata:
   author: ouwibo
----
-
----
-description: Build an exploit chain — given bug A, finds B and C to combine for higher severity and payout. Knows common chain patterns: IDOR→ATO, SSRF→cloud metadata, XSS→ATO, open redirect→OAuth theft, S3→bundle→secret→OAuth. Usage: /chain
 ---
 
 # /chain
@@ -141,4 +136,3 @@ If 3 consecutive B candidates fail Gate 0 → cluster is dry, stop
 - You're on your 4th "maybe" candidate
 - B needs 3+ simultaneous preconditions
 - You keep saying "this could lead to..." without an HTTP request
-
