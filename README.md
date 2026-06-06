@@ -10,10 +10,25 @@
 
 ## Quick Start
 
+Install every skill as a flat list in your agent skills directory:
+
 ```bash
 git clone https://github.com/ouwibo/awskill
 cd awskill
 bash install.sh
+```
+
+By default, `install.sh` copies all 248 skills into `~/.claude/skills` without category folders. To install into Codex instead:
+
+```bash
+AWSKILL_TARGET=codex bash install.sh
+```
+
+If you only want to install skills without installing external security tools:
+
+```bash
+python3 scripts/tools/install_skills.py --target claude --force
+python3 scripts/tools/install_skills.py --target codex --force
 ```
 
 ---
@@ -74,19 +89,26 @@ python3 scripts/tools/crypto_audit.py https://github.com/org/repo
 python3 scripts/tools/crypto_audit.py https://project.io
 ```
 
-### Browse & Run Skills
+### Browse, Export, Install & Run Skills
 ```bash
 python3 scripts/awskill.py --list
 python3 scripts/awskill.py --search xss
 python3 scripts/awskill.py --cat "Security & Penetration Testing"
 python3 scripts/awskill.py --run bug-bounty
+python3 scripts/awskill.py --install --target codex --force
+python3 scripts/awskill.py --export-flat --clean
 ```
+
+`--export-flat` copies every skill out of the category folders into `dist/skills/` and writes a matching `dist/skills/skills.json` manifest, which makes the full collection easy to inspect, zip, or mirror.
 
 ### Validate Repository Metadata
 ```bash
+python3 scripts/tools/generate_manifest.py
 python3 scripts/tools/validate_skills.py
-python3 -m compileall -q .
+python3 -m compileall -q scripts
 ```
+
+The root [`skills.json`](skills.json) manifest is generated from all `SKILL.md` files and is the canonical installable list for the hundreds of skills in this repository.
 
 ---
 

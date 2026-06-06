@@ -77,27 +77,13 @@ info "Installing Python tools..."
 pip3 install sqlmap arjun wapiti3 slither-analyzer 2>/dev/null | tail -1
 ok "Python tools done"
 
-# --- Register skills to ~/.claude ---
-SKILLS_DST="$HOME/.claude/skills"
-CMDS_DST="$HOME/.claude/commands"
-mkdir -p "$SKILLS_DST" "$CMDS_DST"
-
+# --- Register all skills as a flat installable list ---
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-BASE_DIR="$(dirname "$SCRIPT_DIR")"
+SKILL_TARGET="${AWSKILL_TARGET:-claude}"
 
-count=0
-for cat in "Security & Penetration Testing" "Finance & Crypto"; do
-    cat_path="$BASE_DIR/$cat"
-    [ -d "$cat_path" ] || continue
-    for skill in "$cat_path"/*/; do
-        name=$(basename "$skill")
-        if [ -f "$skill/SKILL.md" ] && [ ! -d "$SKILLS_DST/$name" ]; then
-            cp -r "$skill" "$SKILLS_DST/$name"
-            ((count++))
-        fi
-    done
-done
-ok "$count skills registered to ~/.claude/skills"
+info "Registering all skills for $SKILL_TARGET..."
+python3 "$SCRIPT_DIR/scripts/tools/install_skills.py" --target "$SKILL_TARGET" --force
+ok "All awskill skills registered as a flat installable list"
 
 # --- Verify ---
 echo -e "\n\033[1;37m  Verification:\033[0m"

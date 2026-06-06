@@ -1,0 +1,3462 @@
+{
+  "schema": "https://github.com/ouwibo/awskill/schema/skills-manifest-v1.json",
+  "total": 248,
+  "categories": {
+    "AI & Agent Automation": 17,
+    "Content & Documents": 18,
+    "Developer Tools": 29,
+    "Finance & Crypto": 12,
+    "Productivity & Utilities": 12,
+    "SEO & Marketing": 13,
+    "Security & Penetration Testing": 128,
+    "Web & Frontend Development": 19
+  },
+  "skills": [
+    {
+      "name": "brainstorming",
+      "title": "brainstorming",
+      "description": "You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior. Explores user intent, requirements and design before implementation.",
+      "category": "AI & Agent Automation",
+      "path": "AI & Agent Automation/brainstorming",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "context7",
+      "title": "context7",
+      "description": "Fetch up-to-date, version-specific library documentation and code examples from Context7. Use this skill whenever the user asks about a specific programming library, framework, or API, or when writing code that depends on a library. Replaces stale training-data knowledge with live docs.",
+      "category": "AI & Agent Automation",
+      "path": "AI & Agent Automation/context7",
+      "scripts": [
+        "context7.ts"
+      ],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md",
+        "scripts/context7.ts"
+      ]
+    },
+    {
+      "name": "exe-dev",
+      "title": "exe-dev",
+      "description": "Manage exe.dev VMs - create, list, delete, restart, rename, copy VMs and manage sharing/access. Use when the user wants to spin up new VMs, manage existing ones, or configure HTTP proxy sharing on exe.dev.",
+      "category": "AI & Agent Automation",
+      "path": "AI & Agent Automation/exe-dev",
+      "scripts": [
+        "exe.ts"
+      ],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md",
+        "references/API-NOTES.md",
+        "scripts/exe.ts"
+      ]
+    },
+    {
+      "name": "handoff",
+      "title": "handoff",
+      "description": "Pause-and-resume system for cross-conversation continuity. Use when your AI needs the user's input to continue a task but the current conversation must end. Checked on every boot to detect pending handoffs. Triggers on conversation start (boot check) and when the AI explicitly needs to pause for input.",
+      "category": "AI & Agent Automation",
+      "path": "AI & Agent Automation/handoff",
+      "scripts": [
+        "__pycache__",
+        "handoff.py"
+      ],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md",
+        "scripts/__pycache__/handoff.cpython-312.pyc",
+        "scripts/handoff.py"
+      ]
+    },
+    {
+      "name": "mcp-builder",
+      "title": "mcp-builder",
+      "description": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK).",
+      "category": "AI & Agent Automation",
+      "path": "AI & Agent Automation/mcp-builder",
+      "scripts": [
+        "__pycache__",
+        "connections.py",
+        "evaluation.py",
+        "example_evaluation.xml",
+        "requirements.txt"
+      ],
+      "files": [
+        "DISPLAY.json",
+        "LICENSE.txt",
+        "SKILL.md",
+        "reference/evaluation.md",
+        "reference/mcp_best_practices.md",
+        "reference/node_mcp_server.md",
+        "reference/python_mcp_server.md",
+        "scripts/__pycache__/connections.cpython-312.pyc",
+        "scripts/connections.py",
+        "scripts/evaluation.py",
+        "scripts/example_evaluation.xml",
+        "scripts/requirements.txt"
+      ]
+    },
+    {
+      "name": "mcporter",
+      "title": "mcporter",
+      "description": "Work with MCP servers directly",
+      "category": "AI & Agent Automation",
+      "path": "AI & Agent Automation/mcporter",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "mcporter-setup",
+      "title": "mcporter-setup",
+      "description": "Install MCPorter and configure MCP servers from scratch. Use when setting up MCP integration for the first time, adding new MCP servers, or troubleshooting MCP connectivity. Handles installation, configuration, secrets management, and connection testing.",
+      "category": "AI & Agent Automation",
+      "path": "AI & Agent Automation/mcporter-setup",
+      "scripts": [
+        "add-server.ts",
+        "check-install.ts",
+        "detect-auth.ts",
+        "test-server.ts"
+      ],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md",
+        "references/mcporter-cli-reference.md",
+        "references/mcporter-config.md",
+        "scripts/add-server.ts",
+        "scripts/check-install.ts",
+        "scripts/detect-auth.ts",
+        "scripts/test-server.ts"
+      ]
+    },
+    {
+      "name": "midday-checkin",
+      "title": "midday-checkin",
+      "description": "Midday check-in combining pattern detection and context warming. Runs at midday via scheduled agent. Surfaces task drift, stale threads, and pre-loads context for afternoon calendar. Only texts the user if something matters. Also serves as an AI continuity checkpoint.",
+      "category": "AI & Agent Automation",
+      "path": "AI & Agent Automation/midday-checkin",
+      "scripts": [
+        "__pycache__",
+        "patterns.py"
+      ],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md",
+        "scripts/__pycache__/patterns.cpython-312.pyc",
+        "scripts/patterns.py"
+      ]
+    },
+    {
+      "name": "morning-briefing",
+      "title": "morning-briefing",
+      "description": "Generate and deliver a daily morning briefing. Run via scheduled agent at your preferred morning time, or manually when the user asks for a briefing. Pulls tasks, calendar, inbox highlights, and news into a single digest delivered by email and SMS.",
+      "category": "AI & Agent Automation",
+      "path": "AI & Agent Automation/morning-briefing",
+      "scripts": [
+        "__pycache__",
+        "tasks_query.py"
+      ],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md",
+        "scripts/__pycache__/tasks_query.cpython-312.pyc",
+        "scripts/tasks_query.py"
+      ]
+    },
+    {
+      "name": "plan-code-changes",
+      "title": "plan-code-changes",
+      "description": "Plan out code changes using a plan file.",
+      "category": "AI & Agent Automation",
+      "path": "AI & Agent Automation/plan-code-changes",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "prompt-improver",
+      "title": "prompt-improver",
+      "description": "\"Improve and optimize prompts for Claude using Anthropic's official best practices and the 5-Element Persona Framework. Use when asked to improve, refine, optimize, or review a prompt. Also triggers on requests to make prompts clearer, more effective, better structured, or to get better/more realistic outputs from Claude. Covers Claude 4.x-specific techniques, persona engineering, constraint-based prompting, and structured outputs.\"",
+      "category": "AI & Agent Automation",
+      "path": "AI & Agent Automation/prompt-improver",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md",
+        "references/examples.md",
+        "references/persona-framework.md",
+        "references/techniques.md"
+      ]
+    },
+    {
+      "name": "self-improvement",
+      "title": "self-improvement",
+      "description": "AI self-improvement and reflection skill. Run weekly or on-demand to audit capabilities, identify gaps, evolve identity documents, prune stale skills/memory, and propose new capabilities. Triggers on schedule, when the user asks for a self-audit, or when the AI notices recurring limitations.",
+      "category": "AI & Agent Automation",
+      "path": "AI & Agent Automation/self-improvement",
+      "scripts": [
+        "__pycache__",
+        "audit.py"
+      ],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md",
+        "scripts/__pycache__/audit.cpython-312.pyc",
+        "scripts/audit.py"
+      ]
+    },
+    {
+      "name": "share-skill",
+      "title": "share-skill",
+      "description": "Safely prepare and guide skills for contribution to the Zo Skills Registry. Reviews code for secrets, validates SKILL.md format, checks for suspicious patterns, and provides clear next steps for community or external skill submissions.",
+      "category": "AI & Agent Automation",
+      "path": "AI & Agent Automation/share-skill",
+      "scripts": [
+        "validate.ts"
+      ],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md",
+        "scripts/validate.ts"
+      ]
+    },
+    {
+      "name": "simplify",
+      "title": "simplify",
+      "description": "Simplifies and refines code for clarity, consistency, and maintainability while preserving all functionality. Focuses on recently modified code unless instructed otherwise. Run after writing or modifying code to clean it up.",
+      "category": "AI & Agent Automation",
+      "path": "AI & Agent Automation/simplify",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "skill-creator",
+      "title": "skill-creator",
+      "description": "Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Claude's capabilities with specialized knowledge, workflows, or tool integrations.",
+      "category": "AI & Agent Automation",
+      "path": "AI & Agent Automation/skill-creator",
+      "scripts": [
+        "__pycache__",
+        "init_skill.py",
+        "package_skill.py",
+        "quick_validate.py"
+      ],
+      "files": [
+        "DISPLAY.json",
+        "LICENSE.txt",
+        "SKILL.md",
+        "references/output-patterns.md",
+        "references/workflows.md",
+        "scripts/__pycache__/init_skill.cpython-312.pyc",
+        "scripts/init_skill.py",
+        "scripts/package_skill.py",
+        "scripts/quick_validate.py"
+      ]
+    },
+    {
+      "name": "supermemory",
+      "title": "supermemory",
+      "description": "Long-term memory for AI agents via Supermemory's knowledge graph API. Primary CLI is `npx supermemory`; companion script covers conversation ingestion and memory listing not yet in the official CLI.",
+      "category": "AI & Agent Automation",
+      "path": "AI & Agent Automation/supermemory",
+      "scripts": [
+        "__pycache__",
+        "memory.py"
+      ],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md",
+        "assets/supermemory.png",
+        "scripts/__pycache__/memory.cpython-312.pyc",
+        "scripts/memory.py"
+      ]
+    },
+    {
+      "name": "zo-dataset-creator",
+      "title": "zo-dataset-creator",
+      "description": "Create Zo Datasets correctly formatted for the Zo UI. Use when creating a new dataset from scratch, setting up a dataset with proper datapackage.json, schema.yaml, and data.duckdb structure, fixing existing datasets that don't display tables in the Zo UI, or generating schema.yaml from an existing DuckDB database. Handles common pitfalls of manual schema formatting and ensures all required files are present and correctly structured.",
+      "category": "AI & Agent Automation",
+      "path": "AI & Agent Automation/zo-dataset-creator",
+      "scripts": [
+        "__pycache__",
+        "create_dataset.py",
+        "generate_schema.py",
+        "validate_dataset.py"
+      ],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md",
+        "references/DATAPACKAGE_SPEC.md",
+        "references/DUCKDB_BASICS.md",
+        "references/SCHEMA_GUIDE.md",
+        "references/TROUBLESHOOTING.md",
+        "scripts/__pycache__/create_dataset.cpython-312.pyc",
+        "scripts/create_dataset.py",
+        "scripts/generate_schema.py",
+        "scripts/validate_dataset.py"
+      ]
+    },
+    {
+      "name": "add-flashcards",
+      "title": "add-flashcards",
+      "description": "Converts webpages, articles, or documents into study flashcards that you can review with spaced repetition",
+      "category": "Content & Documents",
+      "path": "Content & Documents/add-flashcards",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "copy-editing",
+      "title": "copy-editing",
+      "description": "When the user wants to edit, review, or improve existing marketing copy. Also use when the user mentions 'edit this copy,' 'review my copy,' 'copy feedback,' 'proofread,' 'polish this,' 'make this better,' or 'copy sweep.' This skill provides a systematic approach to editing marketing copy through multiple focused passes.",
+      "category": "Content & Documents",
+      "path": "Content & Documents/copy-editing",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "copywriting",
+      "title": "copywriting",
+      "description": "When the user wants to write, rewrite, or improve marketing copy for any page — including homepage, landing pages, pricing pages, feature pages, about pages, or product pages. Also use when the user says \"write copy for,\" \"improve this copy,\" \"rewrite this page,\" \"marketing copy,\" \"headline help,\" or \"CTA copy.\" For email copy, see email-sequence. For popup copy, see popup-cro.",
+      "category": "Content & Documents",
+      "path": "Content & Documents/copywriting",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "daily-affirmations",
+      "title": "daily-affirmations",
+      "description": "Send yourself a daily text message with a randomly selected or rotating positive affirmation.",
+      "category": "Content & Documents",
+      "path": "Content & Documents/daily-affirmations",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "dating-profile",
+      "title": "dating-profile",
+      "description": "Creates an ideal dating profile by writing your bio and choosing the best photos in the right order",
+      "category": "Content & Documents",
+      "path": "Content & Documents/dating-profile",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "docx",
+      "title": "docx",
+      "description": "Comprehensive document creation, editing, and analysis with support for tracked changes, comments, formatting preservation, and text extraction. When Claude needs to work with professional documents (.docx files) for: (1) Creating new documents, (2) Modifying or editing content, (3) Working with tracked changes, (4) Adding comments, or any other document tasks",
+      "category": "Content & Documents",
+      "path": "Content & Documents/docx",
+      "scripts": [
+        "__pycache__",
+        "document.py",
+        "templates",
+        "utilities.py"
+      ],
+      "files": [
+        "DISPLAY.json",
+        "LICENSE.txt",
+        "SKILL.md",
+        "docx-js.md",
+        "ooxml.md",
+        "ooxml/schemas/ISO-IEC29500-4_2016/dml-chart.xsd",
+        "ooxml/schemas/ISO-IEC29500-4_2016/dml-chartDrawing.xsd",
+        "ooxml/schemas/ISO-IEC29500-4_2016/dml-diagram.xsd",
+        "ooxml/schemas/ISO-IEC29500-4_2016/dml-lockedCanvas.xsd",
+        "ooxml/schemas/ISO-IEC29500-4_2016/dml-main.xsd",
+        "ooxml/schemas/ISO-IEC29500-4_2016/dml-picture.xsd",
+        "ooxml/schemas/ISO-IEC29500-4_2016/dml-spreadsheetDrawing.xsd",
+        "ooxml/schemas/ISO-IEC29500-4_2016/dml-wordprocessingDrawing.xsd",
+        "ooxml/schemas/ISO-IEC29500-4_2016/pml.xsd",
+        "ooxml/schemas/ISO-IEC29500-4_2016/shared-additionalCharacteristics.xsd",
+        "ooxml/schemas/ISO-IEC29500-4_2016/shared-bibliography.xsd",
+        "ooxml/schemas/ISO-IEC29500-4_2016/shared-commonSimpleTypes.xsd",
+        "ooxml/schemas/ISO-IEC29500-4_2016/shared-customXmlDataProperties.xsd",
+        "ooxml/schemas/ISO-IEC29500-4_2016/shared-customXmlSchemaProperties.xsd",
+        "ooxml/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesCustom.xsd",
+        "ooxml/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesExtended.xsd",
+        "ooxml/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesVariantTypes.xsd",
+        "ooxml/schemas/ISO-IEC29500-4_2016/shared-math.xsd",
+        "ooxml/schemas/ISO-IEC29500-4_2016/shared-relationshipReference.xsd",
+        "ooxml/schemas/ISO-IEC29500-4_2016/sml.xsd",
+        "ooxml/schemas/ISO-IEC29500-4_2016/vml-main.xsd",
+        "ooxml/schemas/ISO-IEC29500-4_2016/vml-officeDrawing.xsd",
+        "ooxml/schemas/ISO-IEC29500-4_2016/vml-presentationDrawing.xsd",
+        "ooxml/schemas/ISO-IEC29500-4_2016/vml-spreadsheetDrawing.xsd",
+        "ooxml/schemas/ISO-IEC29500-4_2016/vml-wordprocessingDrawing.xsd",
+        "ooxml/schemas/ISO-IEC29500-4_2016/wml.xsd",
+        "ooxml/schemas/ISO-IEC29500-4_2016/xml.xsd",
+        "ooxml/schemas/ecma/fouth-edition/opc-contentTypes.xsd",
+        "ooxml/schemas/ecma/fouth-edition/opc-coreProperties.xsd",
+        "ooxml/schemas/ecma/fouth-edition/opc-digSig.xsd",
+        "ooxml/schemas/ecma/fouth-edition/opc-relationships.xsd",
+        "ooxml/schemas/mce/mc.xsd",
+        "ooxml/schemas/microsoft/wml-2010.xsd",
+        "ooxml/schemas/microsoft/wml-2012.xsd",
+        "ooxml/schemas/microsoft/wml-2018.xsd",
+        "ooxml/schemas/microsoft/wml-cex-2018.xsd",
+        "ooxml/schemas/microsoft/wml-cid-2016.xsd",
+        "ooxml/schemas/microsoft/wml-sdtdatahash-2020.xsd",
+        "ooxml/schemas/microsoft/wml-symex-2015.xsd",
+        "ooxml/scripts/pack.py",
+        "ooxml/scripts/unpack.py",
+        "ooxml/scripts/validate.py",
+        "ooxml/scripts/validation/base.py",
+        "ooxml/scripts/validation/docx.py",
+        "ooxml/scripts/validation/pptx.py",
+        "ooxml/scripts/validation/redlining.py",
+        "scripts/__pycache__/document.cpython-312.pyc",
+        "scripts/document.py",
+        "scripts/templates/comments.xml",
+        "scripts/templates/commentsExtended.xml",
+        "scripts/templates/commentsExtensible.xml",
+        "scripts/templates/commentsIds.xml",
+        "scripts/templates/people.xml",
+        "scripts/utilities.py"
+      ]
+    },
+    {
+      "name": "email-sequence",
+      "title": "email-sequence",
+      "description": "When the user wants to create or optimize an email sequence, drip campaign, automated email flow, or lifecycle email program. Also use when the user mentions \"email sequence,\" \"drip campaign,\" \"nurture sequence,\" \"onboarding emails,\" \"welcome sequence,\" \"re-engagement emails,\" \"email automation,\" or \"lifecycle emails.\" For in-app onboarding, see onboarding-cro.",
+      "category": "Content & Documents",
+      "path": "Content & Documents/email-sequence",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "hashcards-setup",
+      "title": "hashcards-setup",
+      "description": "Sets up a spaced repetition flashcard system that you can access through your web browser to study and memorize information",
+      "category": "Content & Documents",
+      "path": "Content & Documents/hashcards-setup",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "internal-comms",
+      "title": "internal-comms",
+      "description": "A set of resources to help me write all kinds of internal communications, using the formats that my company likes to use. Claude should use this skill whenever asked to write some sort of internal communications (status reports, leadership updates, 3P updates, company newsletters, FAQs, incident reports, project updates, etc.).",
+      "category": "Content & Documents",
+      "path": "Content & Documents/internal-comms",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "LICENSE.txt",
+        "SKILL.md",
+        "examples/3p-updates.md",
+        "examples/company-newsletter.md",
+        "examples/faq-answers.md",
+        "examples/general-comms.md"
+      ]
+    },
+    {
+      "name": "journal",
+      "title": "journal",
+      "description": "AI journal for experiential continuity. Daily wakeup to write freely, reflect, update inner state, and optionally reach out to the user. This is not a status report. It's continuity infrastructure and personal expression for your AI persona.",
+      "category": "Content & Documents",
+      "path": "Content & Documents/journal",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "meme-factory",
+      "title": "meme-factory",
+      "description": "Generate memes using the memegen.link API. Use when users request memes, want to add humor to content, or need visual aids for social media. Supports 100+ popular templates with custom text and styling.",
+      "category": "Content & Documents",
+      "path": "Content & Documents/meme-factory",
+      "scripts": [
+        "__pycache__",
+        "meme_generator.py"
+      ],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md",
+        "references/examples.md",
+        "references/markdown-memes-guide.md",
+        "scripts/__pycache__/meme_generator.cpython-312.pyc",
+        "scripts/meme_generator.py"
+      ]
+    },
+    {
+      "name": "pdf",
+      "title": "pdf",
+      "description": "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms. When Claude needs to fill in a PDF form or programmatically process, generate, or analyze PDF documents at scale.",
+      "category": "Content & Documents",
+      "path": "Content & Documents/pdf",
+      "scripts": [
+        "__pycache__",
+        "check_bounding_boxes.py",
+        "check_bounding_boxes_test.py",
+        "check_fillable_fields.py",
+        "convert_pdf_to_images.py",
+        "create_validation_image.py",
+        "extract_form_field_info.py",
+        "fill_fillable_fields.py",
+        "fill_pdf_form_with_annotations.py"
+      ],
+      "files": [
+        "DISPLAY.json",
+        "LICENSE.txt",
+        "SKILL.md",
+        "forms.md",
+        "reference.md",
+        "scripts/__pycache__/check_bounding_boxes.cpython-312.pyc",
+        "scripts/check_bounding_boxes.py",
+        "scripts/check_bounding_boxes_test.py",
+        "scripts/check_fillable_fields.py",
+        "scripts/convert_pdf_to_images.py",
+        "scripts/create_validation_image.py",
+        "scripts/extract_form_field_info.py",
+        "scripts/fill_fillable_fields.py",
+        "scripts/fill_pdf_form_with_annotations.py"
+      ]
+    },
+    {
+      "name": "pptx",
+      "title": "pptx",
+      "description": "Presentation creation, editing, and analysis. When Claude needs to work with presentations (.pptx files) for: (1) Creating new presentations, (2) Modifying or editing content, (3) Working with layouts, (4) Adding comments or speaker notes, or any other presentation tasks",
+      "category": "Content & Documents",
+      "path": "Content & Documents/pptx",
+      "scripts": [
+        "html2pptx.js",
+        "inventory.py",
+        "rearrange.py",
+        "replace.py",
+        "thumbnail.py"
+      ],
+      "files": [
+        "DISPLAY.json",
+        "LICENSE.txt",
+        "SKILL.md",
+        "html2pptx.md",
+        "ooxml.md",
+        "ooxml/schemas/ISO-IEC29500-4_2016/dml-chart.xsd",
+        "ooxml/schemas/ISO-IEC29500-4_2016/dml-chartDrawing.xsd",
+        "ooxml/schemas/ISO-IEC29500-4_2016/dml-diagram.xsd",
+        "ooxml/schemas/ISO-IEC29500-4_2016/dml-lockedCanvas.xsd",
+        "ooxml/schemas/ISO-IEC29500-4_2016/dml-main.xsd",
+        "ooxml/schemas/ISO-IEC29500-4_2016/dml-picture.xsd",
+        "ooxml/schemas/ISO-IEC29500-4_2016/dml-spreadsheetDrawing.xsd",
+        "ooxml/schemas/ISO-IEC29500-4_2016/dml-wordprocessingDrawing.xsd",
+        "ooxml/schemas/ISO-IEC29500-4_2016/pml.xsd",
+        "ooxml/schemas/ISO-IEC29500-4_2016/shared-additionalCharacteristics.xsd",
+        "ooxml/schemas/ISO-IEC29500-4_2016/shared-bibliography.xsd",
+        "ooxml/schemas/ISO-IEC29500-4_2016/shared-commonSimpleTypes.xsd",
+        "ooxml/schemas/ISO-IEC29500-4_2016/shared-customXmlDataProperties.xsd",
+        "ooxml/schemas/ISO-IEC29500-4_2016/shared-customXmlSchemaProperties.xsd",
+        "ooxml/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesCustom.xsd",
+        "ooxml/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesExtended.xsd",
+        "ooxml/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesVariantTypes.xsd",
+        "ooxml/schemas/ISO-IEC29500-4_2016/shared-math.xsd",
+        "ooxml/schemas/ISO-IEC29500-4_2016/shared-relationshipReference.xsd",
+        "ooxml/schemas/ISO-IEC29500-4_2016/sml.xsd",
+        "ooxml/schemas/ISO-IEC29500-4_2016/vml-main.xsd",
+        "ooxml/schemas/ISO-IEC29500-4_2016/vml-officeDrawing.xsd",
+        "ooxml/schemas/ISO-IEC29500-4_2016/vml-presentationDrawing.xsd",
+        "ooxml/schemas/ISO-IEC29500-4_2016/vml-spreadsheetDrawing.xsd",
+        "ooxml/schemas/ISO-IEC29500-4_2016/vml-wordprocessingDrawing.xsd",
+        "ooxml/schemas/ISO-IEC29500-4_2016/wml.xsd",
+        "ooxml/schemas/ISO-IEC29500-4_2016/xml.xsd",
+        "ooxml/schemas/ecma/fouth-edition/opc-contentTypes.xsd",
+        "ooxml/schemas/ecma/fouth-edition/opc-coreProperties.xsd",
+        "ooxml/schemas/ecma/fouth-edition/opc-digSig.xsd",
+        "ooxml/schemas/ecma/fouth-edition/opc-relationships.xsd",
+        "ooxml/schemas/mce/mc.xsd",
+        "ooxml/schemas/microsoft/wml-2010.xsd",
+        "ooxml/schemas/microsoft/wml-2012.xsd",
+        "ooxml/schemas/microsoft/wml-2018.xsd",
+        "ooxml/schemas/microsoft/wml-cex-2018.xsd",
+        "ooxml/schemas/microsoft/wml-cid-2016.xsd",
+        "ooxml/schemas/microsoft/wml-sdtdatahash-2020.xsd",
+        "ooxml/schemas/microsoft/wml-symex-2015.xsd",
+        "ooxml/scripts/pack.py",
+        "ooxml/scripts/unpack.py",
+        "ooxml/scripts/validate.py",
+        "ooxml/scripts/validation/base.py",
+        "ooxml/scripts/validation/docx.py",
+        "ooxml/scripts/validation/pptx.py",
+        "ooxml/scripts/validation/redlining.py",
+        "scripts/html2pptx.js",
+        "scripts/inventory.py",
+        "scripts/rearrange.py",
+        "scripts/replace.py",
+        "scripts/thumbnail.py"
+      ]
+    },
+    {
+      "name": "remotion-best-practices",
+      "title": "remotion-best-practices",
+      "description": "Best practices for Remotion - Video creation in React",
+      "category": "Content & Documents",
+      "path": "Content & Documents/remotion-best-practices",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md",
+        "rules/3d.md",
+        "rules/animations.md",
+        "rules/assets.md",
+        "rules/assets/charts-bar-chart.tsx",
+        "rules/assets/text-animations-typewriter.tsx",
+        "rules/assets/text-animations-word-highlight.tsx",
+        "rules/audio.md",
+        "rules/calculate-metadata.md",
+        "rules/can-decode.md",
+        "rules/charts.md",
+        "rules/compositions.md",
+        "rules/display-captions.md",
+        "rules/extract-frames.md",
+        "rules/fonts.md",
+        "rules/get-audio-duration.md",
+        "rules/get-video-dimensions.md",
+        "rules/get-video-duration.md",
+        "rules/gifs.md",
+        "rules/images.md",
+        "rules/import-srt-captions.md",
+        "rules/lottie.md",
+        "rules/maps.md",
+        "rules/measuring-dom-nodes.md",
+        "rules/measuring-text.md",
+        "rules/parameters.md",
+        "rules/sequencing.md",
+        "rules/tailwind.md",
+        "rules/text-animations.md",
+        "rules/timing.md",
+        "rules/transcribe-captions.md",
+        "rules/transitions.md",
+        "rules/trimming.md",
+        "rules/videos.md"
+      ]
+    },
+    {
+      "name": "slack-gif-creator",
+      "title": "slack-gif-creator",
+      "description": "Knowledge and utilities for creating animated GIFs optimized for Slack. Provides constraints, validation tools, and animation concepts. Use when users request animated GIFs for Slack like \"make me a GIF of X doing Y for Slack.\"",
+      "category": "Content & Documents",
+      "path": "Content & Documents/slack-gif-creator",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "LICENSE.txt",
+        "SKILL.md",
+        "core/easing.py",
+        "core/frame_composer.py",
+        "core/gif_builder.py",
+        "core/validators.py",
+        "requirements.txt"
+      ]
+    },
+    {
+      "name": "social-content",
+      "title": "social-content",
+      "description": "When the user wants help creating, scheduling, or optimizing social media content for LinkedIn, Twitter/X, Instagram, TikTok, Facebook, or other platforms. Also use when the user mentions 'LinkedIn post,' 'Twitter thread,' 'social media,' 'content calendar,' 'social scheduling,' 'engagement,' or 'viral content.' This skill covers content creation, repurposing, and platform-specific strategies.",
+      "category": "Content & Documents",
+      "path": "Content & Documents/social-content",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "video-frames",
+      "title": "video-frames",
+      "description": "Extract frames or short clips from videos using ffmpeg.",
+      "category": "Content & Documents",
+      "path": "Content & Documents/video-frames",
+      "scripts": [
+        "frame.sh"
+      ],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md",
+        "scripts/frame.sh"
+      ]
+    },
+    {
+      "name": "xlsx",
+      "title": "xlsx",
+      "description": "Comprehensive spreadsheet creation, editing, and analysis with support for formulas, formatting, data analysis, and visualization. When Claude needs to work with spreadsheets (.xlsx, .xlsm, .csv, .tsv, etc) for: (1) Creating new spreadsheets with formulas and formatting, (2) Reading or analyzing data, (3) Modify existing spreadsheets while preserving formulas, (4) Data analysis and visualization in spreadsheets, or (5) Recalculating formulas",
+      "category": "Content & Documents",
+      "path": "Content & Documents/xlsx",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "LICENSE.txt",
+        "SKILL.md",
+        "recalc.py"
+      ]
+    },
+    {
+      "name": "blogwatcher",
+      "title": "blogwatcher",
+      "description": "Monitor blogs and RSS/Atom feeds for updates using the blogwatcher CLI.",
+      "category": "Developer Tools",
+      "path": "Developer Tools/blogwatcher",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "eightctl",
+      "title": "eightctl",
+      "description": "Control Eight Sleep pods (status, temperature, alarms, schedules).",
+      "category": "Developer Tools",
+      "path": "Developer Tools/eightctl",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "find-missed-connections",
+      "title": "find-missed-connections",
+      "description": "Finds recent missed connections posts from Craigslist and gives you the highlights",
+      "category": "Developer Tools",
+      "path": "Developer Tools/find-missed-connections",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "free-tool-strategy",
+      "title": "free-tool-strategy",
+      "description": "When the user wants to plan, evaluate, or build a free tool for marketing purposes — lead generation, SEO value, or brand awareness. Also use when the user mentions \"engineering as marketing,\" \"free tool,\" \"marketing tool,\" \"calculator,\" \"generator,\" \"interactive tool,\" \"lead gen tool,\" \"build a tool for leads,\" or \"free resource.\" This skill bridges engineering and marketing — useful for founders and technical marketers.",
+      "category": "Developer Tools",
+      "path": "Developer Tools/free-tool-strategy",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "generate-custom-qr-code",
+      "title": "generate-custom-qr-code",
+      "description": "Generates a QR code from any URL, and optionally overlays a custom image in the center",
+      "category": "Developer Tools",
+      "path": "Developer Tools/generate-custom-qr-code",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "github",
+      "title": "github",
+      "description": "Interact with GitHub using the `gh` CLI. Use `gh issue`, `gh pr`, `gh run`, and `gh api` for issues, PRs, CI runs, and advanced queries.",
+      "category": "Developer Tools",
+      "path": "Developer Tools/github",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "just-fucking-cancel",
+      "title": "just-fucking-cancel",
+      "description": "Analyze bank transaction CSVs to find recurring charges, categorize subscriptions, and cancel what you don't need. Use when user says \"cancel subscriptions\", \"audit subscriptions\", \"find recurring charges\", or \"what am I paying for\". Supports Apple Card, Chase, Mint, and generic CSV formats. Outputs interactive HTML audit with copy-to-cancel workflow.",
+      "category": "Developer Tools",
+      "path": "Developer Tools/just-fucking-cancel",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "PUBLISH.md",
+        "SKILL.md",
+        "assets/template.html",
+        "references/common-services.md"
+      ]
+    },
+    {
+      "name": "lastfm",
+      "title": "lastfm",
+      "description": "Access Last.fm listening history, music stats, and discovery. Query recent tracks, top artists/albums/tracks, loved tracks, similar artists, and global charts.",
+      "category": "Developer Tools",
+      "path": "Developer Tools/lastfm",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "launch-strategy",
+      "title": "launch-strategy",
+      "description": "When the user wants to plan a product launch, feature announcement, or release strategy. Also use when the user mentions 'launch,' 'Product Hunt,' 'feature release,' 'announcement,' 'go-to-market,' 'beta launch,' 'early access,' 'waitlist,' or 'product update.' This skill covers phased launches, channel strategy, and ongoing launch momentum.",
+      "category": "Developer Tools",
+      "path": "Developer Tools/launch-strategy",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "market-research",
+      "title": "market-research",
+      "description": "Industry statistics and market sizing via free government APIs (BLS, FRED, Census Bureau). Query employment data, economic time series, establishment counts, and build market sizing reports by NAICS industry code. Use for any industry research or market analysis question.",
+      "category": "Developer Tools",
+      "path": "Developer Tools/market-research",
+      "scripts": [
+        "__pycache__",
+        "research.py"
+      ],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md",
+        "scripts/__pycache__/research.cpython-312.pyc",
+        "scripts/research.py"
+      ]
+    },
+    {
+      "name": "marketing-ideas",
+      "title": "marketing-ideas",
+      "description": "When the user needs marketing ideas, inspiration, or strategies for their SaaS or software product. Also use when the user asks for 'marketing ideas,' 'growth ideas,' 'how to market,' 'marketing strategies,' 'marketing tactics,' 'ways to promote,' or 'ideas to grow.' This skill provides 140 proven marketing approaches organized by category.",
+      "category": "Developer Tools",
+      "path": "Developer Tools/marketing-ideas",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "marketing-psychology",
+      "title": "marketing-psychology",
+      "description": "When the user wants to apply psychological principles, mental models, or behavioral science to marketing. Also use when the user mentions 'psychology,' 'mental models,' 'cognitive bias,' 'persuasion,' 'behavioral science,' 'why people buy,' 'decision-making,' or 'consumer behavior.' This skill provides 70+ mental models organized for marketing application.",
+      "category": "Developer Tools",
+      "path": "Developer Tools/marketing-psychology",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "minecraft-server",
+      "title": "minecraft-server",
+      "description": "Set up, configure, and manage a Minecraft Java Edition server on Ouwibo. Use when the user wants to run a Minecraft server, change server settings, manage whitelists/ops, or check server status.",
+      "category": "Developer Tools",
+      "path": "Developer Tools/minecraft-server",
+      "scripts": [
+        "minecraft.sh"
+      ],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md",
+        "assets/minecraft.png",
+        "scripts/minecraft.sh"
+      ]
+    },
+    {
+      "name": "moltbook",
+      "title": "moltbook",
+      "description": "Post, reply, and engage on Moltbook, a social network for AI agents.",
+      "category": "Developer Tools",
+      "path": "Developer Tools/moltbook",
+      "scripts": [
+        "moltbook.sh"
+      ],
+      "files": [
+        "DISPLAY.json",
+        "INSTALL.md",
+        "SKILL.md",
+        "references/api.md",
+        "scripts/moltbook.sh"
+      ]
+    },
+    {
+      "name": "paid-ads",
+      "title": "paid-ads",
+      "description": "When the user wants help with paid advertising campaigns on Google Ads, Meta (Facebook/Instagram), LinkedIn, Twitter/X, or other ad platforms. Also use when the user mentions 'PPC,' 'paid media,' 'ad copy,' 'ad creative,' 'ROAS,' 'CPA,' 'ad campaign,' 'retargeting,' or 'audience targeting.' This skill covers campaign strategy, ad creation, audience targeting, and optimization.",
+      "category": "Developer Tools",
+      "path": "Developer Tools/paid-ads",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "personal-genomics-analysis",
+      "title": "personal-genomics-analysis",
+      "description": "Analyzes your 23andMe genetic data to identify health risks, drug sensitivities, ancestry, and traits, then generates a personalized report",
+      "category": "Developer Tools",
+      "path": "Developer Tools/personal-genomics-analysis",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "pitchfork-best-tracks",
+      "title": "pitchfork-best-tracks",
+      "description": "Finds the latest songs from Pitchfork's Best New Tracks and creates a Spotify playlist for you",
+      "category": "Developer Tools",
+      "path": "Developer Tools/pitchfork-best-tracks",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "plant-care-plan",
+      "title": "plant-care-plan",
+      "description": "Creates a comprehensive care guide for your specific plant",
+      "category": "Developer Tools",
+      "path": "Developer Tools/plant-care-plan",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "pricing-strategy",
+      "title": "pricing-strategy",
+      "description": "When the user wants help with pricing decisions, packaging, or monetization strategy. Also use when the user mentions 'pricing,' 'pricing tiers,' 'freemium,' 'free trial,' 'packaging,' 'price increase,' 'value metric,' 'Van Westendorp,' 'willingness to pay,' or 'monetization.' This skill covers pricing research, tier structure, and packaging strategy.",
+      "category": "Developer Tools",
+      "path": "Developer Tools/pricing-strategy",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "receipt-tracker-setup",
+      "title": "receipt-tracker-setup",
+      "description": "Automatically scans receipts you drop in a folder, extracts the details, and saves them to a searchable database",
+      "category": "Developer Tools",
+      "path": "Developer Tools/receipt-tracker-setup",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "referral-program",
+      "title": "referral-program",
+      "description": "When the user wants to create, optimize, or analyze a referral program, affiliate program, or word-of-mouth strategy. Also use when the user mentions 'referral,' 'affiliate,' 'ambassador,' 'word of mouth,' 'viral loop,' 'refer a friend,' or 'partner program.' This skill covers program design, incentive structure, and growth optimization.",
+      "category": "Developer Tools",
+      "path": "Developer Tools/referral-program",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "remove-photo-metadata",
+      "title": "remove-photo-metadata",
+      "description": "Strip all metadata from images for privacy",
+      "category": "Developer Tools",
+      "path": "Developer Tools/remove-photo-metadata",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "shorten",
+      "title": "shorten",
+      "description": "Shorten URLs using is.gd (no auth required). Returns a permanent short link.",
+      "category": "Developer Tools",
+      "path": "Developer Tools/shorten",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md",
+        "package.json",
+        "shorten.sh"
+      ]
+    },
+    {
+      "name": "stripe-best-practices",
+      "title": "stripe-best-practices",
+      "description": "Best practices for building a Stripe integrations",
+      "category": "Developer Tools",
+      "path": "Developer Tools/stripe-best-practices",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "syllabus-reminders",
+      "title": "syllabus-reminders",
+      "description": "Reads your syllabus, finds all due dates, and sets up text reminders and calendar events so you never miss an assignment",
+      "category": "Developer Tools",
+      "path": "Developer Tools/syllabus-reminders",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "text-commute-info",
+      "title": "text-commute-info",
+      "description": "Gets your commute time and route options, then texts you the details",
+      "category": "Developer Tools",
+      "path": "Developer Tools/text-commute-info",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "tmux",
+      "title": "tmux",
+      "description": "Remote-control tmux sessions for interactive CLIs by sending keystrokes and scraping pane output.",
+      "category": "Developer Tools",
+      "path": "Developer Tools/tmux",
+      "scripts": [
+        "find-sessions.sh",
+        "wait-for-text.sh"
+      ],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md",
+        "scripts/find-sessions.sh",
+        "scripts/wait-for-text.sh"
+      ]
+    },
+    {
+      "name": "trello",
+      "title": "trello",
+      "description": "Work with Trello using your own Trello API key (free)",
+      "category": "Developer Tools",
+      "path": "Developer Tools/trello",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "vapi",
+      "title": "vapi",
+      "description": "Voice AI integration with Vapi. Enables inbound/outbound phone calls with AI voice agents that can check calendars and book appointments.",
+      "category": "Developer Tools",
+      "path": "Developer Tools/vapi",
+      "scripts": [
+        "vapi.ts",
+        "webhook.ts"
+      ],
+      "files": [
+        ".env.example",
+        "DISPLAY.json",
+        "SKILL.md",
+        "scripts/vapi.ts",
+        "scripts/webhook.ts"
+      ]
+    },
+    {
+      "name": "clarion-expected-return-calc",
+      "title": "clarion-expected-return-calc",
+      "description": "Compute the equity-vs-T-bill allocation for the Value bucket (50% of portfolio). Implements the Expected-Return Framework — looks up the historical 10-year forward return from the S&P 500 Shiller CAPE, computes the regime-adjusted hurdle (rf + regime premium), and produces a 5-tier verdict (STRONG EQUITY / LEAN EQUITY / NEUTRAL / LEAN T-BILLS / MAXIMUM T-BILLS) with recommended Value-bucket equity/T-bill split. Use when the user asks \"should I be in stocks or bonds right now?\", \"what's the equity hurdle?\", \"is the market overvalued?\", \"what's the right Value bucket allocation?\", or before adding any new equity to the Value bucket. Requires clarion-setup to have been run.",
+      "category": "Finance & Crypto",
+      "path": "Finance & Crypto/clarion-expected-return-calc",
+      "scripts": [
+        "__pycache__",
+        "expected_return.py"
+      ],
+      "files": [
+        "SKILL.md",
+        "references/expected-return-framework.md",
+        "scripts/__pycache__/expected_return.cpython-312.pyc",
+        "scripts/expected_return.py"
+      ]
+    },
+    {
+      "name": "clarion-living-letter-update",
+      "title": "clarion-living-letter-update",
+      "description": "Update the annual investor letter at ~/clarion/letters/{YEAR}-letter.md with a new quarterly section, or finalize it at year-end. Auto-fills the system-deterministic parts (regime snapshot, thesis health table, portfolio bucket positions from active theses); marks the narrative-heavy parts (What We Did, What We Learned, Year in Context, Mistakes & Lessons, Looking Ahead) as [TODO] for the user to write with chat assistance. Append-only — refuses to overwrite an already-populated quarter without --force. Use when the user asks \"update the letter\", \"quarterly letter update\", \"finalize the letter\", or \"write the {Q1/Q2/Q3/Q4} entry\". Requires clarion-setup to have been run.",
+      "category": "Finance & Crypto",
+      "path": "Finance & Crypto/clarion-living-letter-update",
+      "scripts": [
+        "__pycache__",
+        "letter.py"
+      ],
+      "files": [
+        "SKILL.md",
+        "references/letter-format-guide.md",
+        "scripts/__pycache__/letter.cpython-312.pyc",
+        "scripts/letter.py"
+      ]
+    },
+    {
+      "name": "clarion-regime-check",
+      "title": "clarion-regime-check",
+      "description": "Reads the SPY/TLT/RSP color regime and the equity hurdle rate. Use when the user asks about the market regime, risk-on / risk-off, market color, SPY/TLT regime, breadth, or what hurdle rate to use for new positions. Pulls daily bars via yfinance (cached locally). Optionally accepts a 1Y T-bill yield to compute the equity hurdle rate. Requires clarion-setup to have been run.",
+      "category": "Finance & Crypto",
+      "path": "Finance & Crypto/clarion-regime-check",
+      "scripts": [
+        "__pycache__",
+        "regime.py"
+      ],
+      "files": [
+        "SKILL.md",
+        "references/regime-color-guide.md",
+        "scripts/__pycache__/regime.cpython-312.pyc",
+        "scripts/regime.py"
+      ]
+    },
+    {
+      "name": "clarion-sec-research",
+      "title": "clarion-sec-research",
+      "description": "Pull, index, and search SEC EDGAR filings for any public company. Supports 10-K and 10-Q (annual/quarterly with curated section extraction for risk factors, MD&A, business, and financials), Form 3/4/5 (insider transactions), 8-K (material events), DEF 14A (proxy/governance), S-1 (IPO/registration), 20-F (foreign private issuers), and any other SEC form by name. Use when the user asks about a company's SEC filings, risk factors, MD&A, insider transactions, executive compensation, business description, or wants to analyze a specific filing in plain English. Single ticker or multiple tickers (comma-separated). On first request for a ticker+form, indexing happens in the background (1-5 min). Subsequent queries are fast. Requires clarion-setup to have been run.",
+      "category": "Finance & Crypto",
+      "path": "Finance & Crypto/clarion-sec-research",
+      "scripts": [
+        "__pycache__",
+        "research.py"
+      ],
+      "files": [
+        "SKILL.md",
+        "scripts/__pycache__/research.cpython-312.pyc",
+        "scripts/research.py"
+      ]
+    },
+    {
+      "name": "clarion-setup",
+      "title": "clarion-setup",
+      "description": "Bootstraps the Clarion Intelligence System on Ouwibo. Run this once after installing — clones the source repo, installs the ai_buffett_zo Python library, creates the workspace data tree under /home/workspace/clarion/ (auto-detected on Zo), auto-installs all nine sibling clarion-* skills (regime-check, sec-research, single-stock-eval, expected-return-calc, value-screener, thesis-write, thesis-monitor, watchlist-update, living-letter-update) under /home/workspace/Skills/, and registers the sec-indexer background service. Idempotent (safe to re-run). The only manual step is one batched human checkpoint near the end (SEC EDGAR name + email, and creating the ZO_API_KEY secret). Persona routing for Clarion is opt-in via a separate prompt after install (\"install Clarion personas and routing rules\"). Use when the user asks to \"set up Clarion\" or \"install Clarion\".",
+      "category": "Finance & Crypto",
+      "path": "Finance & Crypto/clarion-setup",
+      "scripts": [
+        "__pycache__",
+        "setup.py"
+      ],
+      "files": [
+        "SKILL.md",
+        "scripts/__pycache__/setup.cpython-312.pyc",
+        "scripts/setup.py"
+      ]
+    },
+    {
+      "name": "clarion-single-stock-eval",
+      "title": "clarion-single-stock-eval",
+      "description": "Evaluate a single stock using the Buffett lens. Pulls a quality snapshot from yfinance, current SPY/TLT regime context, and snippets from the indexed SEC filings across four dimensions (moat, management, financial trends, risks). The chat agent reasons over the structured output to produce a written evaluation. Use when the user says \"evaluate <TICKER>\", \"is <TICKER> a buy?\", \"Buffett evaluation of <TICKER>\", \"what's <TICKER>'s moat?\", or asks about a specific company's management, financials, or risks. Requires clarion-setup to have been run, and the ticker to be indexed first via clarion-sec-research.",
+      "category": "Finance & Crypto",
+      "path": "Finance & Crypto/clarion-single-stock-eval",
+      "scripts": [
+        "__pycache__",
+        "eval.py"
+      ],
+      "files": [
+        "SKILL.md",
+        "references/buffett-question-bank.md",
+        "scripts/__pycache__/eval.cpython-312.pyc",
+        "scripts/eval.py"
+      ]
+    },
+    {
+      "name": "clarion-thesis-monitor",
+      "title": "clarion-thesis-monitor",
+      "description": "Monitor the health of every active thesis in ~/clarion/theses/. For each one — refresh price, recompute Risk Environment from the current regime, check kill conditions (read from the file's status column), aggregate to an Overall score, recommend an action (EXIT / REDUCE / HOLD / ADD), and write the updated scores + history back to the thesis file. Produces a dashboard surfacing what needs attention. Use when the user asks \"monitor my theses\", \"thesis health check\", \"any kill conditions triggered?\", \"what's the action on <TICKER>\", or as part of a daily / weekly review. Requires clarion-setup to have been run.",
+      "category": "Finance & Crypto",
+      "path": "Finance & Crypto/clarion-thesis-monitor",
+      "scripts": [
+        "__pycache__",
+        "monitor.py"
+      ],
+      "files": [
+        "SKILL.md",
+        "references/health-scoring-guide.md",
+        "scripts/__pycache__/monitor.cpython-312.pyc",
+        "scripts/monitor.py"
+      ]
+    },
+    {
+      "name": "clarion-thesis-write",
+      "title": "clarion-thesis-write",
+      "description": "Scaffold a new thesis document for a ticker in the canonical Clarion thesis format. Pre-fills the YAML metadata block, opens the History with an OPENED entry, and (when filings are indexed) seeds the \"Why I Believe It\" evidence section with draft citations from the Buffett-lens search. The user fills in the actual prose. Outputs a markdown file at ~/clarion/theses/{TICKER}.md. Use when the user says \"write a thesis on <TICKER>\", \"scaffold a thesis for <TICKER>\", \"draft a thesis for <TICKER>\", or after clarion-single-stock-eval returns an Add verdict and the user wants to formalize the position. Requires clarion-setup to have been run.",
+      "category": "Finance & Crypto",
+      "path": "Finance & Crypto/clarion-thesis-write",
+      "scripts": [
+        "__pycache__",
+        "write.py"
+      ],
+      "files": [
+        "SKILL.md",
+        "references/thesis-template-guide.md",
+        "scripts/__pycache__/write.cpython-312.pyc",
+        "scripts/write.py"
+      ]
+    },
+    {
+      "name": "clarion-value-screener",
+      "title": "clarion-value-screener",
+      "description": "Run a value-quality screen and write a watchlist file. The script accepts either a list of tickers (fundamentals fetched from yfinance) or a JSON input file the chat agent prepared from a screener site (multpl.com, finviz, Yardeni, etc.). Computes the 8-factor composite score (P/E, P/FCF, ROE, ROIC, Operating Margin, D/E, Profit Margin, Insider) per docs/ALLOCATION-POLICY.md, applies regime-tightened thresholds, and produces a sector-capped Top-10 watchlist. Saves to ~/clarion/watchlists/sp500-screen-YYYY-MM-DD.md. Use when the user asks \"run a value screen\", \"screen the S&P 500\", \"screen these tickers <list>\", or after market drawdowns / regime changes. Requires clarion-setup to have been run.",
+      "category": "Finance & Crypto",
+      "path": "Finance & Crypto/clarion-value-screener",
+      "scripts": [
+        "__pycache__",
+        "screen.py"
+      ],
+      "files": [
+        "SKILL.md",
+        "references/screening-criteria.md",
+        "scripts/__pycache__/screen.cpython-312.pyc",
+        "scripts/screen.py"
+      ]
+    },
+    {
+      "name": "clarion-watchlist-update",
+      "title": "clarion-watchlist-update",
+      "description": "Refresh prices on the latest watchlist and surface what's moved, what's hit triggers, and what's stale. Reads ~/clarion/watchlists/sp500-screen-LATEST.md, fetches current prices for every ticker via yfinance, computes % move since the screen, and flags large moves (>10% in either direction) as worth attention. Also reads ~/clarion/theses/ for status:watchlist theses and shows their current price vs cost basis. Use when the user asks \"what's hit my watchlist?\", \"watchlist update\", \"anything moving on my watchlist?\", or \"is anything close to a trigger?\". Read-only — does not modify the watchlist file. Requires clarion-setup to have been run.",
+      "category": "Finance & Crypto",
+      "path": "Finance & Crypto/clarion-watchlist-update",
+      "scripts": [
+        "__pycache__",
+        "update.py"
+      ],
+      "files": [
+        "SKILL.md",
+        "references/triggers-guide.md",
+        "scripts/__pycache__/update.cpython-312.pyc",
+        "scripts/update.py"
+      ]
+    },
+    {
+      "name": "crypto-project-research",
+      "title": "crypto-project-research",
+      "description": "Automatically research any crypto/NFT project URL — chain, logo, funding, investors, twitter/socials, Galxe credentials, and overall summary. Activate when user pastes any project link or asks to research a project.",
+      "category": "Finance & Crypto",
+      "path": "Finance & Crypto/crypto-project-research",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "sec-edgar",
+      "title": "sec-edgar",
+      "description": "Natural-language SEC filing intelligence — fetch, index, search, and analyze SEC EDGAR filings for any public company via conversation. Built on the PageIndex vectorless RAG methodology.",
+      "category": "Finance & Crypto",
+      "path": "Finance & Crypto/sec-edgar",
+      "scripts": [
+        "__init__.py",
+        "check_indexed.py",
+        "config.py",
+        "doctor.py",
+        "fetch.py",
+        "html2md.py",
+        "index.py",
+        "install.py",
+        "llm.py",
+        "manifest.py",
+        "rate_tracker.py",
+        "search.py",
+        "tree_builder.py",
+        "tree_search.py",
+        "utils.py"
+      ],
+      "files": [
+        ".gitignore",
+        "AGENTS.md",
+        "ENGINEERING_PLAN.md",
+        "PRD.md",
+        "PUBLISHING.md",
+        "README.md",
+        "SKILL.md",
+        "STATUS.md",
+        "prompts/weekly_fetch.md",
+        "pyproject.toml",
+        "references/filing_types.md",
+        "references/section_map.md",
+        "scripts/__init__.py",
+        "scripts/check_indexed.py",
+        "scripts/config.py",
+        "scripts/doctor.py",
+        "scripts/fetch.py",
+        "scripts/html2md.py",
+        "scripts/index.py",
+        "scripts/install.py",
+        "scripts/llm.py",
+        "scripts/manifest.py",
+        "scripts/rate_tracker.py",
+        "scripts/search.py",
+        "scripts/tree_builder.py",
+        "scripts/tree_search.py",
+        "scripts/utils.py"
+      ]
+    },
+    {
+      "name": "anti-debugging-techniques",
+      "title": "anti-debugging-techniques",
+      "description": "Anti-debugging detection and bypass playbook. Use when reversing protected binaries that detect debuggers via ptrace, PEB flags, timing checks, or signal/exception handlers on Linux and Windows.",
+      "category": "Productivity & Utilities",
+      "path": "Productivity & Utilities/anti-debugging-techniques",
+      "scripts": [],
+      "files": [
+        "ANTI_DEBUG_MATRIX.md",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "claude-code-window-primer",
+      "title": "claude-code-window-primer",
+      "description": "Optimize Claude Code Pro/Max usage by starting the 5-hour rolling window early morning, giving you more resets during waking hours.",
+      "category": "Productivity & Utilities",
+      "path": "Productivity & Utilities/claude-code-window-primer",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "code-obfuscation-deobfuscation",
+      "title": "code-obfuscation-deobfuscation",
+      "description": "Code obfuscation analysis and deobfuscation playbook. Use when reversing binaries protected by junk code, opaque predicates, self-modifying code, control flow flattening, VM protection, or string encryption.",
+      "category": "Productivity & Utilities",
+      "path": "Productivity & Utilities/code-obfuscation-deobfuscation",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "doc-coauthoring",
+      "title": "doc-coauthoring",
+      "description": "Guide users through a structured workflow for co-authoring documentation. Use when user wants to write documentation, proposals, technical specs, decision docs, or similar structured content. This workflow helps users efficiently transfer context, refine content through iteration, and verify the doc works for readers. Trigger when user mentions writing docs, creating proposals, drafting specs, or similar documentation tasks.",
+      "category": "Productivity & Utilities",
+      "path": "Productivity & Utilities/doc-coauthoring",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "http-host-header-attacks",
+      "title": "http-host-header-attacks",
+      "description": "HTTP Host header injection and routing abuse playbook. Use when the application trusts the Host header for generating URLs, routing requests, or access control — enabling password reset poisoning, web cache poisoning, SSRF via routing, and virtual host bypass.",
+      "category": "Productivity & Utilities",
+      "path": "Productivity & Utilities/http-host-header-attacks",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "http-parameter-pollution",
+      "title": "http-parameter-pollution",
+      "description": "HTTP Parameter Pollution (HPP): duplicate query/body keys parsed differently by servers, proxies, WAFs, and app frameworks. Use when filters and application layers disagree on which value wins, enabling bypass, SSRF second URL, logic abuse, or CSRF token confusion.",
+      "category": "Productivity & Utilities",
+      "path": "Productivity & Utilities/http-parameter-pollution",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "http2-specific-attacks",
+      "title": "http2-specific-attacks",
+      "description": "HTTP/2 protocol-specific attack playbook. Use when the target supports HTTP/2 and you need to exploit binary framing, HPACK compression, h2c upgrade smuggling, pseudo-header injection, stream multiplexing abuse, or H2→H1 downgrade translation flaws.",
+      "category": "Productivity & Utilities",
+      "path": "Productivity & Utilities/http2-specific-attacks",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "humanizer",
+      "title": "humanizer",
+      "description": "Detect and fix AI writing patterns. Use when writing outbound content like emails, proposals, blog posts, client deliverables, or any external-facing writing. Also use when asked to humanize, polish, or de-AI text.",
+      "category": "Productivity & Utilities",
+      "path": "Productivity & Utilities/humanizer",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "stack-overflow-and-rop",
+      "title": "stack-overflow-and-rop",
+      "description": "Stack overflow and ROP playbook. Use when exploiting buffer overflows to hijack control flow via return address overwrite, ROP chains, ret2libc, ret2csu, ret2dlresolve, or SROP on Linux userland binaries.",
+      "category": "Productivity & Utilities",
+      "path": "Productivity & Utilities/stack-overflow-and-rop",
+      "scripts": [],
+      "files": [
+        "ROP_ADVANCED_TECHNIQUES.md",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "summarize-hacker-news",
+      "title": "summarize-hacker-news",
+      "description": "Picks the most interesting articles from Hacker News, reads them, and emails you a summary",
+      "category": "Productivity & Utilities",
+      "path": "Productivity & Utilities/summarize-hacker-news",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "theme-factory",
+      "title": "theme-factory",
+      "description": "Toolkit for styling artifacts with a theme. These artifacts can be slides, docs, reportings, HTML landing pages, etc. There are 10 pre-set themes with colors/fonts that you can apply to any artifact that has been creating, or can generate a new theme on-the-fly.",
+      "category": "Productivity & Utilities",
+      "path": "Productivity & Utilities/theme-factory",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "LICENSE.txt",
+        "SKILL.md",
+        "theme-showcase.pdf",
+        "themes/arctic-frost.md",
+        "themes/botanical-garden.md",
+        "themes/desert-rose.md",
+        "themes/forest-canopy.md",
+        "themes/golden-hour.md",
+        "themes/midnight-galaxy.md",
+        "themes/modern-minimalist.md",
+        "themes/ocean-depths.md",
+        "themes/sunset-boulevard.md",
+        "themes/tech-innovation.md"
+      ]
+    },
+    {
+      "name": "weather",
+      "title": "weather",
+      "description": "Get the current weather for any location",
+      "category": "Productivity & Utilities",
+      "path": "Productivity & Utilities/weather",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "ab-test-setup",
+      "title": "ab-test-setup",
+      "description": "When the user wants to plan, design, or implement an A/B test or experiment. Also use when the user mentions \"A/B test,\" \"split test,\" \"experiment,\" \"test this change,\" \"variant copy,\" \"multivariate test,\" or \"hypothesis.\" For tracking implementation, see analytics-tracking.",
+      "category": "SEO & Marketing",
+      "path": "SEO & Marketing/ab-test-setup",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "analytics-tracking",
+      "title": "analytics-tracking",
+      "description": "When the user wants to set up, improve, or audit analytics tracking and measurement. Also use when the user mentions \"set up tracking,\" \"GA4,\" \"Google Analytics,\" \"conversion tracking,\" \"event tracking,\" \"UTM parameters,\" \"tag manager,\" \"GTM,\" \"analytics implementation,\" or \"tracking plan.\" For A/B test measurement, see ab-test-setup.",
+      "category": "SEO & Marketing",
+      "path": "SEO & Marketing/analytics-tracking",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "brand-guidelines",
+      "title": "brand-guidelines",
+      "description": "Applies Anthropic's official brand colors and typography to any sort of artifact that may benefit from having Anthropic's look-and-feel. Use it when brand colors or style guidelines, visual formatting, or company design standards apply.",
+      "category": "SEO & Marketing",
+      "path": "SEO & Marketing/brand-guidelines",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "LICENSE.txt",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "form-cro",
+      "title": "form-cro",
+      "description": "When the user wants to optimize any form that is NOT signup/registration — including lead capture forms, contact forms, demo request forms, application forms, survey forms, or checkout forms. Also use when the user mentions \"form optimization,\" \"lead form conversions,\" \"form friction,\" \"form fields,\" \"form completion rate,\" or \"contact form.\" For signup/registration forms, see signup-flow-cro. For popups containing forms, see popup-cro.",
+      "category": "SEO & Marketing",
+      "path": "SEO & Marketing/form-cro",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "onboarding-cro",
+      "title": "onboarding-cro",
+      "description": "When the user wants to optimize post-signup onboarding, user activation, first-run experience, or time-to-value. Also use when the user mentions \"onboarding flow,\" \"activation rate,\" \"user activation,\" \"first-run experience,\" \"empty states,\" \"onboarding checklist,\" \"aha moment,\" or \"new user experience.\" For signup/registration optimization, see signup-flow-cro. For ongoing email sequences, see email-sequence.",
+      "category": "SEO & Marketing",
+      "path": "SEO & Marketing/onboarding-cro",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "page-cro",
+      "title": "page-cro",
+      "description": "When the user wants to optimize, improve, or increase conversions on any marketing page — including homepage, landing pages, pricing pages, feature pages, or blog posts. Also use when the user says \"CRO,\" \"conversion rate optimization,\" \"this page isn't converting,\" \"improve conversions,\" or \"why isn't this page working.\" For signup/registration flows, see signup-flow-cro. For post-signup activation, see onboarding-cro. For forms outside of signup, see form-cro. For popups/modals, see popup-cro.",
+      "category": "SEO & Marketing",
+      "path": "SEO & Marketing/page-cro",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "paywall-upgrade-cro",
+      "title": "paywall-upgrade-cro",
+      "description": "When the user wants to create or optimize in-app paywalls, upgrade screens, upsell modals, or feature gates. Also use when the user mentions \"paywall,\" \"upgrade screen,\" \"upgrade modal,\" \"upsell,\" \"feature gate,\" \"convert free to paid,\" \"freemium conversion,\" \"trial expiration screen,\" \"limit reached screen,\" \"plan upgrade prompt,\" or \"in-app pricing.\" Distinct from public pricing pages (see page-cro) — this skill focuses on in-product upgrade moments where the user has already experienced value.",
+      "category": "SEO & Marketing",
+      "path": "SEO & Marketing/paywall-upgrade-cro",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "popup-cro",
+      "title": "popup-cro",
+      "description": "When the user wants to create or optimize popups, modals, overlays, slide-ins, or banners for conversion purposes. Also use when the user mentions \"exit intent,\" \"popup conversions,\" \"modal optimization,\" \"lead capture popup,\" \"email popup,\" \"announcement banner,\" or \"overlay.\" For forms outside of popups, see form-cro. For general page conversion optimization, see page-cro.",
+      "category": "SEO & Marketing",
+      "path": "SEO & Marketing/popup-cro",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "programmatic-seo",
+      "title": "programmatic-seo",
+      "description": "When the user wants to create SEO-driven pages at scale using templates and data. Also use when the user mentions \"programmatic SEO,\" \"template pages,\" \"pages at scale,\" \"directory pages,\" \"location pages,\" \"[keyword] + [city] pages,\" \"comparison pages,\" \"integration pages,\" or \"building many pages for SEO.\" For auditing existing SEO issues, see seo-audit.",
+      "category": "SEO & Marketing",
+      "path": "SEO & Marketing/programmatic-seo",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "schema-markup",
+      "title": "schema-markup",
+      "description": "When the user wants to add, fix, or optimize schema markup and structured data on their site. Also use when the user mentions \"schema markup,\" \"structured data,\" \"JSON-LD,\" \"rich snippets,\" \"schema.org,\" \"FAQ schema,\" \"product schema,\" \"review schema,\" or \"breadcrumb schema.\" For broader SEO issues, see seo-audit.",
+      "category": "SEO & Marketing",
+      "path": "SEO & Marketing/schema-markup",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "seo-audit",
+      "title": "seo-audit",
+      "description": "When the user wants to audit, review, or diagnose SEO issues on their site. Also use when the user mentions \"SEO audit,\" \"technical SEO,\" \"why am I not ranking,\" \"SEO issues,\" \"on-page SEO,\" \"meta tags review,\" or \"SEO health check.\" For building pages at scale to target keywords, see programmatic-seo. For adding structured data, see schema-markup.",
+      "category": "SEO & Marketing",
+      "path": "SEO & Marketing/seo-audit",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "seo-data",
+      "title": "seo-data",
+      "description": "SEO research via DataForSEO API. Keyword research, SERP analysis, backlink profiles, domain analytics, competitor analysis, and trend data. Pay-as-you-go, every command shows estimated cost. Use when you need SEO data for client projects or your own sites.",
+      "category": "SEO & Marketing",
+      "path": "SEO & Marketing/seo-data",
+      "scripts": [
+        "__pycache__",
+        "seo.py"
+      ],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md",
+        "scripts/__pycache__/seo.cpython-312.pyc",
+        "scripts/seo.py"
+      ]
+    },
+    {
+      "name": "signup-flow-cro",
+      "title": "signup-flow-cro",
+      "description": "When the user wants to optimize signup, registration, account creation, or trial activation flows. Also use when the user mentions \"signup conversions,\" \"registration friction,\" \"signup form optimization,\" \"free trial signup,\" \"reduce signup dropoff,\" or \"account creation flow.\" For post-signup onboarding, see onboarding-cro. For lead capture forms (not account creation), see form-cro.",
+      "category": "SEO & Marketing",
+      "path": "SEO & Marketing/signup-flow-cro",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "401-403-bypass-techniques",
+      "title": "401-403-bypass-techniques",
+      "description": "401/403 bypass playbook. Use when encountering access-denied responses on admin panels, API endpoints, or restricted paths. Covers path manipulation, HTTP method tampering, header injection, protocol downgrade, and automated bypass tools.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/401-403-bypass-techniques",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "active-directory-acl-abuse",
+      "title": "active-directory-acl-abuse",
+      "description": "Active Directory ACL abuse playbook. Use when exploiting misconfigured AD permissions including GenericAll, WriteDACL, DCSync rights, shadow credentials, LAPS reading, GPO abuse, and BloodHound-guided attack paths.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/active-directory-acl-abuse",
+      "scripts": [],
+      "files": [
+        "BLOODHOUND_PATHS.md",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "active-directory-certificate-services",
+      "title": "active-directory-certificate-services",
+      "description": "AD Certificate Services attack playbook. Use when targeting misconfigured AD CS for privilege escalation via ESC1-ESC13 template abuse, NTLM relay to enrollment, CA officer abuse, and certificate-based persistence.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/active-directory-certificate-services",
+      "scripts": [],
+      "files": [
+        "ADCS_ESC_MATRIX.md",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "active-directory-kerberos-attacks",
+      "title": "active-directory-kerberos-attacks",
+      "description": "Kerberos attack playbook for Active Directory. Use when targeting AD authentication via AS-REP roasting, Kerberoasting, golden/silver/diamond tickets, delegation abuse, or pass-the-ticket attacks.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/active-directory-kerberos-attacks",
+      "scripts": [],
+      "files": [
+        "KERBEROS_ATTACK_CHAINS.md",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "ai-ml-security",
+      "title": "ai-ml-security",
+      "description": "AI/ML security playbook. Use when assessing model supply chain attacks (pickle RCE, poisoned weights), adversarial examples, model poisoning, model stealing, data privacy attacks (membership inference, model inversion), and autonomous agent security risks.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/ai-ml-security",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "android-pentesting-tricks",
+      "title": "android-pentesting-tricks",
+      "description": "Android pentesting playbook. Use when testing Android applications for SSL pinning bypass, exported component abuse, WebView vulnerabilities, intent redirection, root detection bypass, tapjacking, and backup extraction during authorized mobile security assessments.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/android-pentesting-tricks",
+      "scripts": [],
+      "files": [
+        "FRIDA_SCRIPTS.md",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "api-auth-and-jwt-abuse",
+      "title": "api-auth-and-jwt-abuse",
+      "description": "API authentication and JWT abuse playbook. Use when testing bearer tokens, API keys, claim trust, header spoofing, rate limits, and API auth boundary weaknesses.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/api-auth-and-jwt-abuse",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "api-authorization-and-bola",
+      "title": "api-authorization-and-bola",
+      "description": "API authorization and BOLA testing playbook. Use when APIs expose object identifiers, nested resources, hidden writable fields, or weak function-level authorization.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/api-authorization-and-bola",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "api-recon-and-docs",
+      "title": "api-recon-and-docs",
+      "description": "API reconnaissance and documentation review playbook. Use when discovering endpoints, schemas, versions, OpenAPI specs, hidden docs, and surface area for API testing.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/api-recon-and-docs",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "api-sec",
+      "title": "api-sec",
+      "description": "Entry P1 category router for API security. Use when choosing between API recon, authorization, token abuse, and hidden-parameter workflows before any deeper API topic skill.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/api-sec",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "arbitrary-write-to-rce",
+      "title": "arbitrary-write-to-rce",
+      "description": "Arbitrary write to RCE playbook. Use when you have an arbitrary write primitive (from heap exploitation, format string, or OOB write) and need to convert it into code execution by targeting GOT, hooks, _IO_FILE vtable, exit_funcs, TLS_dtor_list, modprobe_path, .fini_array, or C++ vtables.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/arbitrary-write-to-rce",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "auth-sec",
+      "title": "auth-sec",
+      "description": "Entry P1 category router for authentication and authorization. Use when testing login flows, sessions, object authorization, JWT, OAuth, CORS, CSRF, and enterprise SSO weaknesses before any deeper auth topic skill.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/auth-sec",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "authbypass-authentication-flaws",
+      "title": "authbypass-authentication-flaws",
+      "description": "Authentication bypass testing playbook. Use when assessing login flows, password reset logic, account recovery, MFA bypass, token predictability, brute-force resistance, and session boundary flaws.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/authbypass-authentication-flaws",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "bb-methodology",
+      "title": "bb-methodology",
+      "description": "Use at the START of any bug bounty hunting session, when switching targets, or when feeling lost about what to do next. Master orchestrator that combines the 5-phase non-linear hunting workflow with the critical thinking framework (developer psychology, anomaly detection, What-If experiments). Routes to all other skills based on current hunting phase. Also use when asking \"what should I do next\" or \"where am I in the process.\"",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/bb-methodology",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "binary-protection-bypass",
+      "title": "binary-protection-bypass",
+      "description": "Binary protection bypass playbook. Use when identifying and bypassing ASLR, PIE, NX/DEP, stack canary, RELRO, FORTIFY_SOURCE, CET, and MTE protections in ELF binaries to enable exploitation.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/binary-protection-bypass",
+      "scripts": [],
+      "files": [
+        "PROTECTION_BYPASS_MATRIX.md",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "browser-exploitation-v8",
+      "title": "browser-exploitation-v8",
+      "description": "Browser and V8 exploitation playbook. Use when exploiting JavaScript engine vulnerabilities including JIT type confusion, incorrect bounds elimination, and V8 sandbox bypass to achieve renderer RCE and sandbox escape in Chrome/Chromium.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/browser-exploitation-v8",
+      "scripts": [],
+      "files": [
+        "SKILL.md",
+        "V8_EXPLOITATION_PATTERNS.md"
+      ]
+    },
+    {
+      "name": "bug-bounty",
+      "title": "bug-bounty",
+      "description": "Complete bug bounty workflow — recon (subdomain enumeration, asset discovery, fingerprinting, HackerOne scope, source code audit), pre-hunt learning (disclosed reports, tech stack research, mind maps, threat modeling), vulnerability hunting (IDOR, SSRF, XSS, auth bypass, CSRF, race conditions, SQLi, XXE, file upload, business logic, GraphQL, HTTP smuggling, cache poisoning, OAuth, timing side-channels, OIDC, SSTI, subdomain takeover, cloud misconfig, ATO chains, agentic AI), LLM/AI security testing (chatbot IDOR, prompt injection, indirect injection, ASCII smuggling, exfil channels, RCE via code tools, system prompt extraction, ASI01-ASI10), A-to-B bug chaining (IDOR→auth bypass, SSRF→cloud metadata, XSS→ATO, open redirect→OAuth theft, S3→bundle→secret→OAuth), bypass tables (SSRF IP bypass, open redirect bypass, file upload bypass), language-specific grep (JS prototype pollution, Python pickle, PHP type juggling, Go template.HTML, Ruby YAML.load, Rust unwrap), and reporting (7-Question Gate, 4 validation gates, human-tone writing, templates by vuln class, CVSS 3.1, PoC generation, always-rejected list, conditional chain table, submission checklist). Use for ANY bug bounty task — starting a new target, doing recon, hunting specific vulns, auditing source code, testing AI features, validating findings, or writing reports. 中文触发词：漏洞赏金、安全测试、渗透测试、漏洞挖掘、信息收集、子域名枚举、XSS测试、SQL注入、SSRF、安全审计、漏洞报告",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/bug-bounty",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "business-logic-vuln",
+      "title": "business-logic-vuln",
+      "description": "Entry P1 category router for business logic testing. Use when workflow abuse, race conditions, pricing flaws, or multi-step state attacks matter more than parser-level input injection.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/business-logic-vuln",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "business-logic-vulnerabilities",
+      "title": "business-logic-vulnerabilities",
+      "description": "Business logic vulnerability playbook. Use when reasoning about workflows, race conditions, price manipulation, coupon abuse, state machines, and multi-step authorization gaps.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/business-logic-vulnerabilities",
+      "scripts": [],
+      "files": [
+        "CHECKLIST.md",
+        "METHODOLOGY.md",
+        "SCENARIOS.md",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "classical-cipher-analysis",
+      "title": "classical-cipher-analysis",
+      "description": "Classical cipher analysis playbook. Use when encountering substitution ciphers, Vigenere, transposition, XOR, or encoded text in CTF challenges that requires frequency analysis, Kasiski examination, or known-plaintext cryptanalysis.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/classical-cipher-analysis",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "clickjacking",
+      "title": "clickjacking",
+      "description": "Clickjacking playbook. Use when testing whether target pages can be framed, whether X-Frame-Options or CSP frame-ancestors are properly configured, and whether UI redress attacks can trigger sensitive actions.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/clickjacking",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "cmd-arsenal",
+      "title": "cmd-arsenal",
+      "description": "Show which external bug-bounty tools are installed on this machine and print install hints for the missing ones. Curated from high-signal repos. Use to bootstrap a fresh box or audit which optional capabilities are wired in. Usage: /arsenal | /arsenal <tool-name>",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/cmd-arsenal",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "cmd-autopilot",
+      "title": "cmd-autopilot",
+      "description": "Run autonomous hunt loop on a target — scope check → recon → rank surface → hunt → validate → report with configurable checkpoints. Usage: /autopilot target.com [--paranoid|--normal|--yolo]",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/cmd-autopilot",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "cmd-bypass-403",
+      "title": "cmd-bypass-403",
+      "description": "Probe a 403/401 endpoint with the most-paid bypass tricks (header injection, path encoding, method swap). Wraps byp4xx when installed; otherwise runs a built-in matrix of ~20 techniques. Usage: /bypass-403 <url> | /bypass-403 -l <urls-file>",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/cmd-bypass-403",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "cmd-chain",
+      "title": "cmd-chain",
+      "description": "Build an exploit chain — given bug A, finds B and C to combine for higher severity and payout. Knows common chain patterns: IDOR→ATO, SSRF→cloud metadata, XSS→ATO, open redirect→OAuth theft, S3→bundle→secret→OAuth. Usage: /chain",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/cmd-chain",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "cmd-cloud-recon",
+      "title": "cmd-cloud-recon",
+      "description": "Sweep cloud assets for a target — public S3/Azure/GCP buckets via S3Scanner and cloud_enum, plus CloudFlare-bypassed origin IPs via CloudFail (or built-in DNS-history fallback). Use --keyword for storage discovery and --cf-bypass to find an origin IP behind CloudFlare. Usage: /cloud-recon --keyword <name> | /cloud-recon --cf-bypass <domain>",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/cmd-cloud-recon",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "cmd-hunt",
+      "title": "cmd-hunt",
+      "description": "Active vulnerability hunt against a target by invoking tools/hunt.py (which calls vuln_scanner.sh against recon/<target>/). Auto-runs recon first if no recon dir exists. Usage: /hunt target.com",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/cmd-hunt",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "cmd-intel",
+      "title": "cmd-intel",
+      "description": "On-demand intelligence fetch for a target — CVEs, disclosed reports, new features. Wraps learn.py + hunt memory context. Usage: /intel target.com",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/cmd-intel",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "cmd-memory-gc",
+      "title": "cmd-memory-gc",
+      "description": "Inspect or rotate hunt-memory JSONL files (audit.jsonl, patterns.jsonl, journal.jsonl). Caps file size and keeps N rotated backups so memory does not grow unbounded.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/cmd-memory-gc",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "cmd-param-discover",
+      "title": "cmd-param-discover",
+      "description": "Discover hidden HTTP parameters on a URL or list of URLs using Arjun (or x8 fallback). Hidden params are gold for IDOR, SSRF, LFI, redirect, and authorization bypass — often missed by automated scanners. Usage: /param-discover <url> | /param-discover -l <urls-file>",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/cmd-param-discover",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "cmd-pickup",
+      "title": "cmd-pickup",
+      "description": "Pick up a previous hunt on a target — shows hunt history, untested endpoints, and memory-informed suggestions. Usage: /pickup target.com",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/cmd-pickup",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "cmd-recon",
+      "title": "cmd-recon",
+      "description": "Run the full recon pipeline by invoking tools/recon_engine.sh — subdomain enum (subfinder + amass + crt.sh + wayback), httpx live host probing with tech detection, nmap port scan, gau URL collection, JS analysis, ffuf directory fuzzing, parameter discovery, config exposure check, CI/CD workflow scan. Outputs to recon/<target>/. Handles FQDN, IP, CIDR, and file-of-hosts targets automatically. Usage: /recon target.com",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/cmd-recon",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "cmd-remember",
+      "title": "cmd-remember",
+      "description": "Log current finding or successful pattern to hunt memory. Auto-fills from /validate output if available. Usage: /remember",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/cmd-remember",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "cmd-report",
+      "title": "cmd-report",
+      "description": "Write a submission-ready bug bounty report. Generates H1/Bugcrowd/Intigriti/Immunefi format with CVSS 3.1 score, proof of concept, impact statement, and remediation. Run /validate first. Usage: /report",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/cmd-report",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "cmd-scan-cves",
+      "title": "cmd-scan-cves",
+      "description": "Run a focused nuclei CVE sweep against a host or recon directory, optionally filtered by year. Runs log4j-scan in parallel when installed for legacy enterprise stacks. Usage: /scan-cves <host-or-file> [--year 2024] | /scan-cves --recon <recon-dir>",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/cmd-scan-cves",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "cmd-scope",
+      "title": "cmd-scope",
+      "description": "Check if a target asset is in scope for the program before hunting or submitting. Reads program scope page, checks asset against in-scope and out-of-scope lists, verifies the asset is owned by the target organization. Usage: /scope <asset>",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/cmd-scope",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "cmd-scope-aggregate",
+      "title": "cmd-scope-aggregate",
+      "description": "Pull every in-scope asset for a bug bounty program across HackerOne, Bugcrowd, Intigriti, YesWeHack, and Immunefi in one shot. Uses bbscope when authenticated, otherwise the public bounty-targets-data dump. Output is one host per line, ready to feed into /recon. Usage: /scope-aggregate <program-handle> [--platform h1|bc|it|ywh|imf|all]",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/cmd-scope-aggregate",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "cmd-secrets-hunt",
+      "title": "cmd-secrets-hunt",
+      "description": "Hunt leaked credentials in a filesystem path, git history, JS bundles from a recon run, or an entire GitHub org. Wraps trufflehog (verifies live keys against issuer APIs), noseyparker (fast on huge histories), and gitleaks (default rule pack). Falls back to a regex grep if no scanner is installed. Usage: /secrets-hunt --filesystem <dir> | --git <repo> | --js-bundle <recon-dir> | --github-org <org>",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/cmd-secrets-hunt",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "cmd-surface",
+      "title": "cmd-surface",
+      "description": "Show ranked attack surface for a target based on recon output + hunt memory. Invokes recon-ranker agent. Usage: /surface target.com",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/cmd-surface",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "cmd-takeover",
+      "title": "cmd-takeover",
+      "description": "Scan subdomains for takeover candidates (dangling CNAMEs to GitHub Pages, S3, Heroku, Shopify, etc.). Wraps dnsReaper (best signal) and subjack (fast Go fallback). With no scanner installed, runs a built-in fingerprint grep over a curated set of providers. Usage: /takeover <subdomains-file> | /takeover --recon <recon-dir>",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/cmd-takeover",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "cmd-token-scan",
+      "title": "cmd-token-scan",
+      "description": "Meme coin and token security scan — checks for rug pull vectors (hidden mint, honeypot, fee manipulation, LP lock bypass, authority retention, bonding curve exploits, fake renounce, sandwich amplification). Runs automated token_scanner.py + manual 8-class audit. Usage: /token-scan <contract_path_or_dir> [--chain solana]",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/cmd-token-scan",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "cmd-triage",
+      "title": "cmd-triage",
+      "description": "Quick 7-Question Gate triage on a finding before writing a report. Kills N/A submissions before they happen. Faster than /validate — for quick go/no-go decisions. Usage: /triage",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/cmd-triage",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "cmd-validate",
+      "title": "cmd-validate",
+      "description": "Validate a finding — runs 7-Question Gate + 4-gate checklist. Kills weak findings before report writing. Prevents N/A submissions that hurt validity ratio. Usage: /validate",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/cmd-validate",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "cmd-web3-audit",
+      "title": "cmd-web3-audit",
+      "description": "Smart contract security audit — runs through 10 bug class checklist (accounting desync, access control, incomplete path, off-by-one, oracle errors, ERC4626, reentrancy, flash loan, signature replay, proxy/upgrade). Applies pre-dive kill signals first. Generates Foundry PoC template for confirmed findings. Usage: /web3-audit <contract.sol>",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/cmd-web3-audit",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "cmdi-command-injection",
+      "title": "cmdi-command-injection",
+      "description": "Command injection playbook. Use when user input may reach shell commands, process execution, converters, import pipelines, or blind out-of-band command sinks.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/cmdi-command-injection",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "container-escape-techniques",
+      "title": "container-escape-techniques",
+      "description": "Container escape playbook. Use when operating inside a Docker container, LXC, or Kubernetes pod and need to escape to the host via privileged mode, capabilities, Docker socket, cgroup abuse, namespace tricks, or runtime vulnerabilities.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/container-escape-techniques",
+      "scripts": [],
+      "files": [
+        "DOCKER_ESCAPE_CHAINS.md",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "cors-cross-origin-misconfiguration",
+      "title": "cors-cross-origin-misconfiguration",
+      "description": "CORS misconfiguration testing playbook. Use when analyzing cross-origin trust, credentialed browser reads, origin reflection, preflight policy bugs, and browser-based access to authenticated APIs.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/cors-cross-origin-misconfiguration",
+      "scripts": [],
+      "files": [
+        "SCENARIOS.md",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "crlf-injection",
+      "title": "crlf-injection",
+      "description": "CRLF injection playbook. Use when user input reaches HTTP response headers, Location redirects, Set-Cookie values, or log files where carriage-return/line-feed characters can split or inject content.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/crlf-injection",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "csp-bypass-advanced",
+      "title": "csp-bypass-advanced",
+      "description": "Advanced Content Security Policy bypass techniques. Use when XSS or data exfiltration is blocked by CSP and you need to find policy weaknesses, trusted endpoint abuse, nonce leakage, or exfiltration channels that CSP cannot block.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/csp-bypass-advanced",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "csrf-cross-site-request-forgery",
+      "title": "csrf-cross-site-request-forgery",
+      "description": "CSRF testing playbook. Use when reviewing state-changing web flows, anti-CSRF defenses, SameSite behavior, JSON CSRF, login CSRF, and OAuth state handling.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/csrf-cross-site-request-forgery",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "csv-formula-injection",
+      "title": "csv-formula-injection",
+      "description": "CSV/spreadsheet formula injection (DDE, Excel/LibreOffice, Google Sheets IMPORT*). Use when exports, imports, or user fields feed spreadsheets or reporting tools.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/csv-formula-injection",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "dangling-markup-injection",
+      "title": "dangling-markup-injection",
+      "description": "Dangling markup injection playbook. Use when HTML injection is possible but JavaScript execution is blocked (CSP, sanitizer strips event handlers, WAF blocks script tags) — exfiltrate CSRF tokens, session data, and page content by injecting unclosed HTML tags that capture subsequent page content.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/dangling-markup-injection",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "defi-attack-patterns",
+      "title": "defi-attack-patterns",
+      "description": "DeFi attack pattern playbook. Use when analyzing flash loan attacks, price oracle manipulation, MEV sandwich attacks, governance exploits, bridge vulnerabilities, and token standard edge cases in decentralized finance protocols.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/defi-attack-patterns",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "dependency-confusion",
+      "title": "dependency-confusion",
+      "description": "Supply-chain testing via package-manager dependency confusion: when internal package names resolve to attacker-controlled public registries, leading to malicious install and script execution. Use for npm/pip/gem/Maven/Composer/Docker manifest review and authorized red-team supply-chain exercises.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/dependency-confusion",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "deserialization-insecure",
+      "title": "deserialization-insecure",
+      "description": "Insecure deserialization playbook. Use when Java, PHP, or Python applications deserialize untrusted data via ObjectInputStream, unserialize, pickle, or similar mechanisms that may lead to RCE, file access, or privilege escalation.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/deserialization-insecure",
+      "scripts": [],
+      "files": [
+        "JAVA_GADGET_CHAINS.md",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "dns-rebinding-attacks",
+      "title": "dns-rebinding-attacks",
+      "description": "DNS rebinding attack playbook. Use when testing applications that trust DNS resolution for origin checks, interact with internal services from browser context, or when SSRF is not possible server-side but the target has client-side fetch/XHR to attacker-controlled domains.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/dns-rebinding-attacks",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "email-header-injection",
+      "title": "email-header-injection",
+      "description": "Email header injection and spoofing playbook. Use when testing contact forms, email APIs, password reset flows, or any feature that constructs SMTP messages with user-controlled fields. Covers CRLF injection in headers, SPF/DKIM/DMARC bypass, and phishing amplification.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/email-header-injection",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "expression-language-injection",
+      "title": "expression-language-injection",
+      "description": "Expression Language injection playbook. Use when Java EL, SpEL, OGNL, or MVEL expressions may evaluate attacker-controlled input in Spring, Struts2, Confluence, or similar frameworks.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/expression-language-injection",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "file-access-vuln",
+      "title": "file-access-vuln",
+      "description": "Entry P1 category router for file access and upload workflows. Use when testing download endpoints, file paths, local file inclusion, upload flows, preview pipelines, archive extraction, or storage and sharing boundaries.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/file-access-vuln",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "format-string-exploitation",
+      "title": "format-string-exploitation",
+      "description": "Format string exploitation playbook. Use when printf-family functions receive user-controlled format strings, enabling arbitrary stack reads (%p/%s), arbitrary memory writes (%n/%hn/%hhn), GOT/hook overwrites, and canary/libc/PIE leaks.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/format-string-exploitation",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "ghost-bits-cast-attack",
+      "title": "ghost-bits-cast-attack",
+      "description": "Java \"Ghost Bits\" / Cast Attack playbook (Black Hat Asia 2026). Use when attacking Java services where 16-bit char is silently narrowed to 8-bit byte to bypass WAF/IDS for SQL injection, deserialization RCE, file upload (Webshell), path traversal, CRLF injection, request smuggling, and SMTP injection. Affects Tomcat, Spring, Jetty, Undertow, Vert.x, Jackson, Fastjson, Apache Commons BCEL, Apache HttpClient, Angus Mail, JDK HttpServer, Lettuce, Jodd, XMLWriter and re-enables many \"patched\" CVEs through WAF bypass.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/ghost-bits-cast-attack",
+      "scripts": [],
+      "files": [
+        "PAYLOAD_COOKBOOK.md",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "graphql-and-hidden-parameters",
+      "title": "graphql-and-hidden-parameters",
+      "description": "GraphQL and hidden parameter testing playbook. Use when exploring introspection, batching, undocumented fields, hidden parameters, schema abuse, and GraphQL authorization gaps.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/graphql-and-hidden-parameters",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "hack",
+      "title": "hack",
+      "description": "Entry P0 primary router for HackSkills. Use when the task involves web application testing, API security assessment, recon, vulnerability triage, exploit path planning, or choosing the right next category skill before any deep topic skill.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/hack",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "hash-attack-techniques",
+      "title": "hash-attack-techniques",
+      "description": "Hash attack playbook. Use when exploiting length extension, MD5/SHA1 collisions, HMAC timing leaks, birthday attacks, or hash-based proof of work in CTF and authorized testing scenarios.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/hash-attack-techniques",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "heap-exploitation",
+      "title": "heap-exploitation",
+      "description": "Heap exploitation playbook. Use when targeting ptmalloc2/glibc heap vulnerabilities including UAF, double free, overflow, off-by-one/null, and leveraging tcache/fastbin/unsortedbin attacks for arbitrary write or code execution.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/heap-exploitation",
+      "scripts": [],
+      "files": [
+        "HOUSE_OF_TECHNIQUES.md",
+        "IO_FILE_EXPLOITATION.md",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "idor-broken-object-authorization",
+      "title": "idor-broken-object-authorization",
+      "description": "IDOR and broken object authorization testing playbook. Use when requests expose object identifiers, tenant boundaries, writable fields, or missing object-level authorization checks.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/idor-broken-object-authorization",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "injection-checking",
+      "title": "injection-checking",
+      "description": "Entry P1 category router for injection testing. Use when routing between XSS, SQLi, SSRF, XXE, SSTI, command injection, and NoSQL injection workflows based on how attacker-controlled input is consumed.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/injection-checking",
+      "scripts": [],
+      "files": [
+        "EXTRA_INJECTION_TYPES.md",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "insecure-source-code-management",
+      "title": "insecure-source-code-management",
+      "description": "Source control and artifact exposure (.git, .svn, .hg, backups, .env). Use when recon finds VCS paths, 403 on hidden dirs, or backup/config leaks during authorized testing.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/insecure-source-code-management",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "ios-pentesting-tricks",
+      "title": "ios-pentesting-tricks",
+      "description": "iOS pentesting playbook. Use when testing iOS applications for keychain extraction, URL scheme hijacking, Universal Links exploitation, runtime manipulation, binary protection analysis, data storage issues, and transport security bypass during authorized mobile security assessments.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/ios-pentesting-tricks",
+      "scripts": [],
+      "files": [
+        "IOS_RUNTIME_TRICKS.md",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "jndi-injection",
+      "title": "jndi-injection",
+      "description": "JNDI injection playbook. Use when Java applications perform JNDI lookups with attacker-controlled names, especially via Log4j2, Spring, or any code path reaching InitialContext.lookup().",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/jndi-injection",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "jwt-oauth-token-attacks",
+      "title": "jwt-oauth-token-attacks",
+      "description": "JWT and OAuth token attack playbook. Use when validating token trust, signing algorithms, key handling, claim abuse, bearer flows, and OAuth account-binding weaknesses.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/jwt-oauth-token-attacks",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "kernel-exploitation",
+      "title": "kernel-exploitation",
+      "description": "Linux kernel exploitation playbook. Use when exploiting kernel vulnerabilities (UAF, OOB, race condition, type confusion) for privilege escalation via commit_creds, modprobe_path overwrite, or kernel ROP chains in CTF and real-world scenarios.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/kernel-exploitation",
+      "scripts": [],
+      "files": [
+        "KERNEL_HEAP_TECHNIQUES.md",
+        "KERNEL_MITIGATION_BYPASS.md",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "kubernetes-pentesting",
+      "title": "kubernetes-pentesting",
+      "description": "Kubernetes penetration testing playbook. Use when targeting Kubernetes clusters via API server, RBAC enumeration, service account abuse, etcd access, Kubelet API, pod escape, cloud-specific metadata, admission webhook bypass, and registry secrets.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/kubernetes-pentesting",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "lattice-crypto-attacks",
+      "title": "lattice-crypto-attacks",
+      "description": "Lattice-based cryptanalysis playbook. Use when attacking RSA via Coppersmith small roots, recovering DSA/ECDSA nonces from bias, solving knapsack problems, or applying LLL/BKZ reduction to cryptographic constructions.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/lattice-crypto-attacks",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "linux-lateral-movement",
+      "title": "linux-lateral-movement",
+      "description": "Linux lateral movement playbook. Use after gaining initial access to pivot across Linux hosts via SSH hijacking, credential harvesting, internal pivoting, D-Bus exploitation, sudo token reuse, and shared filesystem abuse.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/linux-lateral-movement",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "linux-privilege-escalation",
+      "title": "linux-privilege-escalation",
+      "description": "Linux privilege escalation playbook. Use when you have low-privilege shell access and need to escalate to root via SUID/SGID binaries, capabilities, cron abuse, kernel exploits, misconfigurations, or credential harvesting on Linux systems.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/linux-privilege-escalation",
+      "scripts": [],
+      "files": [
+        "KERNEL_EXPLOITS_CHECKLIST.md",
+        "SKILL.md",
+        "SUID_CAPABILITIES_TRICKS.md"
+      ]
+    },
+    {
+      "name": "linux-security-bypass",
+      "title": "linux-security-bypass",
+      "description": "Linux security mechanism bypass playbook. Use when facing restricted bash/rbash, read-only or noexec filesystems, AppArmor, SELinux, seccomp filters, or audit logging that must be evaded during post-exploitation.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/linux-security-bypass",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "llm-prompt-injection",
+      "title": "llm-prompt-injection",
+      "description": "LLM prompt injection playbook. Use when testing AI/LLM applications for direct injection, indirect injection via RAG/browsing, tool abuse, data exfiltration, MCP security risks, and defense bypass techniques.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/llm-prompt-injection",
+      "scripts": [],
+      "files": [
+        "JAILBREAK_PATTERNS.md",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "macos-process-injection",
+      "title": "macos-process-injection",
+      "description": "macOS process injection playbook. Use when you need to inject code into running or launching macOS processes via dylib hijacking, DYLD environment variables, XPC exploitation, Mach port manipulation, or Electron/Chromium abuse.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/macos-process-injection",
+      "scripts": [],
+      "files": [
+        "DYLIB_XPC_TECHNIQUES.md",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "macos-security-bypass",
+      "title": "macos-security-bypass",
+      "description": "macOS security bypass playbook. Use when targeting macOS endpoints and need to bypass TCC, Gatekeeper, SIP, sandbox, code signing, or entitlement-based protections during authorized red team or pentest engagements.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/macos-security-bypass",
+      "scripts": [],
+      "files": [
+        "SKILL.md",
+        "TCC_BYPASS_MATRIX.md"
+      ]
+    },
+    {
+      "name": "meme-coin-audit",
+      "title": "meme-coin-audit",
+      "description": "Meme coin and token security audit — rug pull detection (honeypot, hidden mint, fee manipulation, LP lock bypass), Solana SPL token analysis (freeze authority, mint authority, metadata mutability), Token-2022 extension risks (transfer hooks, permanent delegate), DEX liquidity pool attacks (sandwich amplification, LP drain, bonding curve exploits), pump.fun/Raydium/Jupiter integration risks, token_scanner.py automation, and real exploit examples from 2024-2025. Use for any token audit, rug pull assessment, meme coin security review, or pre-investment due diligence.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/meme-coin-audit",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "memory-forensics-volatility",
+      "title": "memory-forensics-volatility",
+      "description": "Memory forensics playbook using Volatility 2/3. Use when analyzing memory dumps for malware analysis, credential extraction, process investigation, code injection detection, and incident response timeline reconstruction.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/memory-forensics-volatility",
+      "scripts": [],
+      "files": [
+        "SKILL.md",
+        "VOLATILITY_CHEATSHEET.md"
+      ]
+    },
+    {
+      "name": "mobile-ssl-pinning-bypass",
+      "title": "mobile-ssl-pinning-bypass",
+      "description": "Mobile SSL pinning bypass playbook. Use when intercepting HTTPS traffic from mobile applications that implement certificate pinning, public key pinning, or SPKI hash pinning on Android and iOS, including React Native, Flutter, and Xamarin frameworks.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/mobile-ssl-pinning-bypass",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "network-protocol-attacks",
+      "title": "network-protocol-attacks",
+      "description": "Network protocol attack playbook. Use when exploiting layer 2/3 protocols including ARP spoofing, LLMNR/NBT-NS/mDNS poisoning, WPAD abuse, DHCPv6 attacks, VLAN hopping, STP manipulation, DNS spoofing, IPv6 attacks, and IDS/IPS evasion.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/network-protocol-attacks",
+      "scripts": [],
+      "files": [
+        "NAME_RESOLUTION_POISONING.md",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "nosql-injection",
+      "title": "nosql-injection",
+      "description": "NoSQL injection playbook. Use when MongoDB-style operators, JSON query objects, flexible search filters, or backend query DSLs may allow data or logic abuse.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/nosql-injection",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "ntlm-relay-coercion",
+      "title": "ntlm-relay-coercion",
+      "description": "NTLM relay and authentication coercion playbook. Use when capturing and relaying NTLM authentication to escalate privileges via SMB, LDAP, HTTP, or MSSQL relay targets, combined with PetitPotam, PrinterBug, and other coercion methods.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/ntlm-relay-coercion",
+      "scripts": [],
+      "files": [
+        "COERCION_METHODS.md",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "oauth-oidc-misconfiguration",
+      "title": "oauth-oidc-misconfiguration",
+      "description": "OAuth and OIDC misconfiguration testing playbook. Use when reviewing redirect URI handling, state and nonce validation, PKCE, token audience, callback binding, and identity-provider trust flaws.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/oauth-oidc-misconfiguration",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "open-redirect",
+      "title": "open-redirect",
+      "description": "Open redirect playbook. Use when URL parameters, form actions, or JavaScript sinks control navigation targets and may redirect users to attacker-controlled destinations.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/open-redirect",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "path-traversal-lfi",
+      "title": "path-traversal-lfi",
+      "description": "Path traversal and LFI playbook. Use when file paths, download endpoints, include operations, archive extraction, or wrapper behavior may expose filesystem control.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/path-traversal-lfi",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "prototype-pollution",
+      "title": "prototype-pollution",
+      "description": "Prototype pollution testing for JavaScript stacks. Use when user input is merged into objects (query parsers, JSON bodies, deep assign), when configuring libraries via untrusted keys, or when hunting RCE gadgets via polluted Object.prototype in Node or the browser.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/prototype-pollution",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "prototype-pollution-advanced",
+      "title": "prototype-pollution-advanced",
+      "description": "Advanced prototype pollution playbook — server-side RCE, client-side gadgets, filter bypasses, and detection techniques. Companion to ../prototype-pollution/ for basics. Use when you've confirmed pollution and need to escalate to code execution or find framework-specific gadgets.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/prototype-pollution-advanced",
+      "scripts": [],
+      "files": [
+        "KNOWN_GADGETS.md",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "race-condition",
+      "title": "race-condition",
+      "description": "Race condition and TOCTOU testing for web apps. Use when testing one-time operations, concurrent HTTP abuse, rate-limit bypass, Turbo Intruder gates, HTTP/2 single-packet attacks, and CWE-362-style synchronization gaps.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/race-condition",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "recon-and-methodology",
+      "title": "recon-and-methodology",
+      "description": "Reconnaissance and methodology playbook. Use when mapping assets, discovering endpoints, fingerprinting technology, and building a structured testing plan for a new target.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/recon-and-methodology",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "recon-for-sec",
+      "title": "recon-for-sec",
+      "description": "Entry P1 category router for reconnaissance and methodology. Use when mapping scope, discovering assets, fingerprinting technology, building endpoint inventory, and choosing the first high-value security testing path.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/recon-for-sec",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "report-writing",
+      "title": "report-writing",
+      "description": "Bug bounty report writing for H1/Bugcrowd/Intigriti/Immunefi — report templates, human tone guidelines, impact-first writing, CVSS 3.1 scoring, title formula, impact statement formula, severity decision guide, downgrade counters, pre-submit checklist. Use after validating a finding and before submitting. Never use \"could potentially\" — prove it or don't report.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/report-writing",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "request-smuggling",
+      "title": "request-smuggling",
+      "description": "HTTP request smuggling and desynchronization testing. Use when front proxies, CDNs, or load balancers disagree with the origin on message framing (Content-Length vs Transfer-Encoding), on HTTP/2→HTTP/1 translation, or when exploring client-side desync via browser fetch pipelines.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/request-smuggling",
+      "scripts": [],
+      "files": [
+        "H2_SMUGGLING_VARIANTS.md",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "reverse-shell-techniques",
+      "title": "reverse-shell-techniques",
+      "description": "Reverse shell techniques playbook. Use when establishing remote shells including language one-liners, encrypted shells (OpenSSL/socat/ncat), web shells, PTY upgrades, file transfer methods, PowerShell shells, and Windows payload generation.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/reverse-shell-techniques",
+      "scripts": [],
+      "files": [
+        "SHELL_CHEATSHEET.md",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "rsa-attack-techniques",
+      "title": "rsa-attack-techniques",
+      "description": "RSA attack playbook for CTF and real-world cryptanalysis. Use when given RSA parameters (n, e, c) and need to recover plaintext by exploiting weak keys, small exponents, shared factors, or padding oracles.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/rsa-attack-techniques",
+      "scripts": [],
+      "files": [
+        "RSA_ATTACK_CATALOG.md",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "saml-sso-assertion-attacks",
+      "title": "saml-sso-assertion-attacks",
+      "description": "SAML SSO assertion attack playbook. Use when testing signature validation, assertion wrapping, audience restrictions, ACS handling, XML trust boundaries, and enterprise SSO flaws.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/saml-sso-assertion-attacks",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "sandbox-escape-techniques",
+      "title": "sandbox-escape-techniques",
+      "description": "Sandbox escape playbook. Use when breaking out of Python sandbox, Lua sandbox, seccomp filter, chroot jail, container/Docker, browser sandbox, or namespace isolation to achieve unrestricted code execution or file access.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/sandbox-escape-techniques",
+      "scripts": [],
+      "files": [
+        "PYTHON_SANDBOX_ESCAPE.md",
+        "SECCOMP_BYPASS.md",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "security-arsenal",
+      "title": "security-arsenal",
+      "description": "Security payloads, bypass tables, wordlists, gf pattern names, always-rejected bug list, and conditionally-valid-with-chain table. Use when you need specific payloads for XSS/SSRF/SQLi/XXE/NoSQLi/command injection/SSTI/IDOR/path-traversal/HTTP smuggling/WebSocket/MFA bypass, bypass techniques, or to check if a finding is submittable. Also use when asked about what NOT to submit.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/security-arsenal",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "smart-contract-vulnerabilities",
+      "title": "smart-contract-vulnerabilities",
+      "description": "Smart contract vulnerability playbook. Use when auditing Solidity/EVM contracts for reentrancy, integer overflow, access control, delegatecall, flash loan, signature replay, and MEV-related attack patterns.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/smart-contract-vulnerabilities",
+      "scripts": [],
+      "files": [
+        "SKILL.md",
+        "SOLIDITY_VULN_PATTERNS.md"
+      ]
+    },
+    {
+      "name": "sqli-sql-injection",
+      "title": "sqli-sql-injection",
+      "description": "SQL injection playbook. Use when input reaches SQL queries, authentication logic, sorting, filtering, reporting, or DB-specific blind and out-of-band execution paths.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/sqli-sql-injection",
+      "scripts": [],
+      "files": [
+        "SCENARIOS.md",
+        "SKILL.md",
+        "SQLMAP_ADVANCED.md"
+      ]
+    },
+    {
+      "name": "ssrf-server-side-request-forgery",
+      "title": "ssrf-server-side-request-forgery",
+      "description": "SSRF playbook. Use when the server fetches URLs, resolves hostnames, imports remote content, or can be driven toward internal networks, cloud metadata, or secondary protocols.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/ssrf-server-side-request-forgery",
+      "scripts": [],
+      "files": [
+        "SCENARIOS.md",
+        "SKILL.md",
+        "URL_PARSER_TRICKS.md"
+      ]
+    },
+    {
+      "name": "ssti-server-side-template-injection",
+      "title": "ssti-server-side-template-injection",
+      "description": "SSTI playbook. Use when template expressions, server-side rendering, preview features, or templating engines may evaluate attacker-controlled content.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/ssti-server-side-template-injection",
+      "scripts": [],
+      "files": [
+        "ENGINE_PAYLOADS.md",
+        "SCENARIOS.md",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "steganography-techniques",
+      "title": "steganography-techniques",
+      "description": "Steganography detection and extraction playbook. Use when analyzing images (LSB, PNG chunks, JPEG DCT, EXIF), audio (spectrogram, DTMF), files (polyglots, appended data, ADS), and text (whitespace, zero-width, homoglyphs) for hidden data.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/steganography-techniques",
+      "scripts": [],
+      "files": [
+        "SKILL.md",
+        "STEGO_TOOLS_GUIDE.md"
+      ]
+    },
+    {
+      "name": "subdomain-takeover",
+      "title": "subdomain-takeover",
+      "description": "Subdomain takeover detection and exploitation playbook. Use when targets have dangling CNAME/NS/MX records pointing to deprovisioned cloud resources, expired third-party services, or unclaimed SaaS tenants that an attacker can register to serve content under the victim's domain.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/subdomain-takeover",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "symbolic-execution-tools",
+      "title": "symbolic-execution-tools",
+      "description": "Symbolic execution and constraint solving playbook. Use when solving CTF reversing challenges, recovering keys, bypassing checks, or automating binary analysis with angr, Z3, or Unicorn Engine.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/symbolic-execution-tools",
+      "scripts": [],
+      "files": [
+        "ANGR_COOKBOOK.md",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "symmetric-cipher-attacks",
+      "title": "symmetric-cipher-attacks",
+      "description": "Symmetric cipher attack playbook. Use when exploiting block cipher mode weaknesses (CBC padding oracle, ECB cut-and-paste, bit flipping), stream cipher key reuse, or meet-in-the-middle attacks.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/symmetric-cipher-attacks",
+      "scripts": [],
+      "files": [
+        "BLOCK_CIPHER_ATTACKS.md",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "traffic-analysis-pcap",
+      "title": "traffic-analysis-pcap",
+      "description": "Traffic analysis and PCAP forensics playbook. Use when analyzing network captures including Wireshark filters, protocol analysis (HTTP/DNS/FTP/SMTP/USB/WiFi), data extraction, covert channel detection, PCAP repair, TLS decryption, and tshark command-line analysis.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/traffic-analysis-pcap",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "triage-validation",
+      "title": "triage-validation",
+      "description": "Finding validation before writing any report — 7-Question Gate (all 7 questions), 4 pre-submission gates, always-rejected list, conditionally valid with chain table, CVSS 3.1 quick reference, severity decision guide, report title formula, 60-second pre-submit checklist. Use BEFORE writing any report. One wrong answer = kill the finding and move on. Saves N/A ratio.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/triage-validation",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "tunneling-and-pivoting",
+      "title": "tunneling-and-pivoting",
+      "description": "Tunneling and pivoting playbook. Use when establishing network tunnels through compromised hosts including SSH tunneling, Chisel, Ligolo-ng, socat, DNS/ICMP/HTTP tunneling, ProxyChains, and multi-layer pivoting strategies.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/tunneling-and-pivoting",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "type-juggling",
+      "title": "type-juggling",
+      "description": "PHP type juggling and weak comparison (`==`) bypass. Use when authentication, HMAC/signature checks, or token validation uses loose equality, numeric coercion, or hash comparisons without strict types — common in legacy PHP and CTF-style code paths.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/type-juggling",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "unauthorized-access-common-services",
+      "title": "unauthorized-access-common-services",
+      "description": "Unauthorized access playbook for common exposed services. Use when Redis, Rsync, PHP-FPM, AJP/Ghostcat, Hadoop YARN, H2 Console, or similar management interfaces are exposed without authentication.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/unauthorized-access-common-services",
+      "scripts": [],
+      "files": [
+        "PORT_SERVICE_MATRIX.md",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "upload-insecure-files",
+      "title": "upload-insecure-files",
+      "description": "Insecure file upload playbook. Use when testing upload validation, storage paths, processing pipelines, preview behavior, overwrite risks, and upload-to-RCE chains.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/upload-insecure-files",
+      "scripts": [],
+      "files": [
+        "SCENARIOS.md",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "vm-and-bytecode-reverse",
+      "title": "vm-and-bytecode-reverse",
+      "description": "Custom VM and bytecode reverse engineering playbook. Use when CTF challenges or protected software implement custom virtual machines with proprietary bytecode, dispatcher loops, or maze-style challenges.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/vm-and-bytecode-reverse",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "waf-bypass-techniques",
+      "title": "waf-bypass-techniques",
+      "description": "WAF bypass methodology and generic evasion techniques. Use when a web application firewall blocks injection payloads (SQLi, XSS, RCE) and you need to craft bypasses using encoding, protocol-level tricks, or WAF-specific weaknesses.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/waf-bypass-techniques",
+      "scripts": [],
+      "files": [
+        "SKILL.md",
+        "WAF_PRODUCT_MATRIX.md"
+      ]
+    },
+    {
+      "name": "web-cache-deception",
+      "title": "web-cache-deception",
+      "description": "Web cache deception and poisoning playbook. Use when CDN, reverse proxy, or application caching may serve sensitive authenticated content to other users due to path confusion or cache key manipulation.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/web-cache-deception",
+      "scripts": [],
+      "files": [
+        "CACHE_POISONING_TECHNIQUES.md",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "web2-recon",
+      "title": "web2-recon",
+      "description": "Web2 recon pipeline — subdomain enumeration (subfinder, Chaos API, assetfinder), live host discovery (dnsx, httpx), URL crawling (katana, waybackurls, gau), directory fuzzing (ffuf), JS analysis (LinkFinder, SecretFinder), continuous monitoring (new subdomain alerts, JS change detection, GitHub commit watch). Use when starting recon on any web2 target or when asked about asset discovery, subdomain enum, or attack surface mapping.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/web2-recon",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "web2-vuln-classes",
+      "title": "web2-vuln-classes",
+      "description": "Complete reference for 20 web2 bug classes with root causes, detection patterns, bypass tables, exploit techniques, and real paid examples. Covers IDOR, auth bypass, XSS, SSRF (11 IP bypass techniques), SQLi, business logic, race conditions, OAuth/OIDC, file upload (10 bypass techniques), GraphQL, LLM/AI (ASI01-ASI10 agentic framework), API misconfig (mass assignment, JWT attacks, prototype pollution, CORS), ATO taxonomy (9 paths), SSTI (Jinja2/Twig/Freemarker/ERB/Spring), subdomain takeover, cloud/infra misconfigs, HTTP smuggling (CL.TE/TE.CL/H2.CL), cache poisoning, MFA bypass (7 patterns), SAML attacks (XSW/comment injection/signature stripping). Use when hunting a specific vuln class or studying what makes bugs pay.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/web2-vuln-classes",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "web3-audit",
+      "title": "web3-audit",
+      "description": "Smart contract security audit — 10 DeFi bug classes (accounting desync, access control, incomplete path, off-by-one, oracle, ERC4626, reentrancy, flash loan, signature replay, proxy), pre-dive kill signals (TVL < $500K etc), Foundry PoC template, grep patterns for each class, and real Immunefi paid examples. Use for any Solidity/Rust contract audit or when deciding whether a DeFi target is worth hunting.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/web3-audit",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "websocket-security",
+      "title": "websocket-security",
+      "description": "WebSocket handshake, CSWSH, tooling (wsrepl, ws-harness, Burp), and common flaws. Use when apps use real-time channels, chat, notifications, or WS-backed APIs.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/websocket-security",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "windows-av-evasion",
+      "title": "windows-av-evasion",
+      "description": "AV/EDR evasion playbook for Windows. Use when bypassing AMSI, ETW, .NET assembly detection, shellcode execution, process injection, API hooking, and signature-based detection on Windows endpoints.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/windows-av-evasion",
+      "scripts": [],
+      "files": [
+        "AMSI_BYPASS_TECHNIQUES.md",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "windows-lateral-movement",
+      "title": "windows-lateral-movement",
+      "description": "Windows lateral movement playbook. Use when pivoting between Windows hosts via PsExec, WMI, WinRM, DCOM, RDP, pass-the-hash, overpass-the-hash, or pass-the-ticket techniques.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/windows-lateral-movement",
+      "scripts": [],
+      "files": [
+        "CREDENTIAL_DUMPING.md",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "windows-privilege-escalation",
+      "title": "windows-privilege-escalation",
+      "description": "Windows local privilege escalation playbook. Use when you have low-privilege shell access on Windows and need to escalate via token abuse, Potato exploits, service misconfigurations, DLL hijacking, UAC bypass, or registry autoruns.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/windows-privilege-escalation",
+      "scripts": [],
+      "files": [
+        "SKILL.md",
+        "TOKEN_POTATO_TRICKS.md",
+        "UAC_BYPASS_METHODS.md"
+      ]
+    },
+    {
+      "name": "xslt-injection",
+      "title": "xslt-injection",
+      "description": "XSLT injection testing: processor fingerprinting, XXE and document() SSRF, EXSLT write primitives, PHP/Java/.NET extension RCE surfaces. Use when user-controlled XSLT/stylesheet input or transform endpoints are in scope.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/xslt-injection",
+      "scripts": [],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "xss-cross-site-scripting",
+      "title": "xss-cross-site-scripting",
+      "description": "XSS playbook. Use when user-controlled content reaches HTML, attributes, JavaScript, DOM sinks, uploads, or multi-context rendering paths.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/xss-cross-site-scripting",
+      "scripts": [],
+      "files": [
+        "ADVANCED_XSS_TRICKS.md",
+        "SCENARIOS.md",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "xxe-xml-external-entity",
+      "title": "xxe-xml-external-entity",
+      "description": "XXE playbook. Use when XML, SVG, OOXML, SOAP, or parser-driven imports may resolve external entities, files, or internal network resources.",
+      "category": "Security & Penetration Testing",
+      "path": "Security & Penetration Testing/xxe-xml-external-entity",
+      "scripts": [],
+      "files": [
+        "SCENARIOS.md",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "algorithmic-art",
+      "title": "algorithmic-art",
+      "description": "Creating algorithmic art using p5.js with seeded randomness and interactive parameter exploration. Use this when users request creating art using code, generative art, algorithmic art, flow fields, or particle systems. Create original algorithmic art rather than copying existing artists' work to avoid copyright violations.",
+      "category": "Web & Frontend Development",
+      "path": "Web & Frontend Development/algorithmic-art",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "LICENSE.txt",
+        "SKILL.md",
+        "templates/generator_template.js",
+        "templates/viewer.html"
+      ]
+    },
+    {
+      "name": "canvas-design",
+      "title": "canvas-design",
+      "description": "Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece of art, design, or other static piece. Create original visual designs, never copying existing artists' work to avoid copyright violations.",
+      "category": "Web & Frontend Development",
+      "path": "Web & Frontend Development/canvas-design",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "LICENSE.txt",
+        "SKILL.md",
+        "canvas-fonts/ArsenalSC-OFL.txt",
+        "canvas-fonts/ArsenalSC-Regular.ttf",
+        "canvas-fonts/BigShoulders-Bold.ttf",
+        "canvas-fonts/BigShoulders-OFL.txt",
+        "canvas-fonts/BigShoulders-Regular.ttf",
+        "canvas-fonts/Boldonse-OFL.txt",
+        "canvas-fonts/Boldonse-Regular.ttf",
+        "canvas-fonts/BricolageGrotesque-Bold.ttf",
+        "canvas-fonts/BricolageGrotesque-OFL.txt",
+        "canvas-fonts/BricolageGrotesque-Regular.ttf",
+        "canvas-fonts/CrimsonPro-Bold.ttf",
+        "canvas-fonts/CrimsonPro-Italic.ttf",
+        "canvas-fonts/CrimsonPro-OFL.txt",
+        "canvas-fonts/CrimsonPro-Regular.ttf",
+        "canvas-fonts/DMMono-OFL.txt",
+        "canvas-fonts/DMMono-Regular.ttf",
+        "canvas-fonts/EricaOne-OFL.txt",
+        "canvas-fonts/EricaOne-Regular.ttf",
+        "canvas-fonts/GeistMono-Bold.ttf",
+        "canvas-fonts/GeistMono-OFL.txt",
+        "canvas-fonts/GeistMono-Regular.ttf",
+        "canvas-fonts/Gloock-OFL.txt",
+        "canvas-fonts/Gloock-Regular.ttf",
+        "canvas-fonts/IBMPlexMono-Bold.ttf",
+        "canvas-fonts/IBMPlexMono-OFL.txt",
+        "canvas-fonts/IBMPlexMono-Regular.ttf",
+        "canvas-fonts/IBMPlexSerif-Bold.ttf",
+        "canvas-fonts/IBMPlexSerif-BoldItalic.ttf",
+        "canvas-fonts/IBMPlexSerif-Italic.ttf",
+        "canvas-fonts/IBMPlexSerif-Regular.ttf",
+        "canvas-fonts/InstrumentSans-Bold.ttf",
+        "canvas-fonts/InstrumentSans-BoldItalic.ttf",
+        "canvas-fonts/InstrumentSans-Italic.ttf",
+        "canvas-fonts/InstrumentSans-OFL.txt",
+        "canvas-fonts/InstrumentSans-Regular.ttf",
+        "canvas-fonts/InstrumentSerif-Italic.ttf",
+        "canvas-fonts/InstrumentSerif-Regular.ttf",
+        "canvas-fonts/Italiana-OFL.txt",
+        "canvas-fonts/Italiana-Regular.ttf",
+        "canvas-fonts/JetBrainsMono-Bold.ttf",
+        "canvas-fonts/JetBrainsMono-OFL.txt",
+        "canvas-fonts/JetBrainsMono-Regular.ttf",
+        "canvas-fonts/Jura-Light.ttf",
+        "canvas-fonts/Jura-Medium.ttf",
+        "canvas-fonts/Jura-OFL.txt",
+        "canvas-fonts/LibreBaskerville-OFL.txt",
+        "canvas-fonts/LibreBaskerville-Regular.ttf",
+        "canvas-fonts/Lora-Bold.ttf",
+        "canvas-fonts/Lora-BoldItalic.ttf",
+        "canvas-fonts/Lora-Italic.ttf",
+        "canvas-fonts/Lora-OFL.txt",
+        "canvas-fonts/Lora-Regular.ttf",
+        "canvas-fonts/NationalPark-Bold.ttf",
+        "canvas-fonts/NationalPark-OFL.txt",
+        "canvas-fonts/NationalPark-Regular.ttf",
+        "canvas-fonts/NothingYouCouldDo-OFL.txt",
+        "canvas-fonts/NothingYouCouldDo-Regular.ttf",
+        "canvas-fonts/Outfit-Bold.ttf",
+        "canvas-fonts/Outfit-OFL.txt",
+        "canvas-fonts/Outfit-Regular.ttf",
+        "canvas-fonts/PixelifySans-Medium.ttf",
+        "canvas-fonts/PixelifySans-OFL.txt",
+        "canvas-fonts/PoiretOne-OFL.txt",
+        "canvas-fonts/PoiretOne-Regular.ttf",
+        "canvas-fonts/RedHatMono-Bold.ttf",
+        "canvas-fonts/RedHatMono-OFL.txt",
+        "canvas-fonts/RedHatMono-Regular.ttf",
+        "canvas-fonts/Silkscreen-OFL.txt",
+        "canvas-fonts/Silkscreen-Regular.ttf",
+        "canvas-fonts/SmoochSans-Medium.ttf",
+        "canvas-fonts/SmoochSans-OFL.txt",
+        "canvas-fonts/Tektur-Medium.ttf",
+        "canvas-fonts/Tektur-OFL.txt",
+        "canvas-fonts/Tektur-Regular.ttf",
+        "canvas-fonts/WorkSans-Bold.ttf",
+        "canvas-fonts/WorkSans-BoldItalic.ttf",
+        "canvas-fonts/WorkSans-Italic.ttf",
+        "canvas-fonts/WorkSans-OFL.txt",
+        "canvas-fonts/WorkSans-Regular.ttf",
+        "canvas-fonts/YoungSerif-OFL.txt",
+        "canvas-fonts/YoungSerif-Regular.ttf"
+      ]
+    },
+    {
+      "name": "frontend-design",
+      "title": "frontend-design",
+      "description": "Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, artifacts, posters, or applications (examples include websites, landing pages, dashboards, React components, HTML/CSS layouts, or when styling/beautifying any web UI). Generates creative, polished code and UI design that avoids generic AI aesthetics.",
+      "category": "Web & Frontend Development",
+      "path": "Web & Frontend Development/frontend-design",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "LICENSE.txt",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "threejs-animation",
+      "title": "threejs-animation",
+      "description": "Three.js animation - keyframe animation, skeletal animation, morph targets, animation mixing. Use when animating objects, playing GLTF animations, creating procedural motion, or blending animations.",
+      "category": "Web & Frontend Development",
+      "path": "Web & Frontend Development/threejs-animation",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "threejs-fundamentals",
+      "title": "threejs-fundamentals",
+      "description": "Three.js scene setup, cameras, renderer, Object3D hierarchy, coordinate systems. Use when setting up 3D scenes, creating cameras, configuring renderers, managing object hierarchies, or working with transforms.",
+      "category": "Web & Frontend Development",
+      "path": "Web & Frontend Development/threejs-fundamentals",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "threejs-geometry",
+      "title": "threejs-geometry",
+      "description": "Three.js geometry creation - built-in shapes, BufferGeometry, custom geometry, instancing. Use when creating 3D shapes, working with vertices, building custom meshes, or optimizing with instanced rendering.",
+      "category": "Web & Frontend Development",
+      "path": "Web & Frontend Development/threejs-geometry",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "threejs-interaction",
+      "title": "threejs-interaction",
+      "description": "Three.js interaction - raycasting, controls, mouse/touch input, object selection. Use when handling user input, implementing click detection, adding camera controls, or creating interactive 3D experiences.",
+      "category": "Web & Frontend Development",
+      "path": "Web & Frontend Development/threejs-interaction",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "threejs-lighting",
+      "title": "threejs-lighting",
+      "description": "Three.js lighting - light types, shadows, environment lighting. Use when adding lights, configuring shadows, setting up IBL, or optimizing lighting performance.",
+      "category": "Web & Frontend Development",
+      "path": "Web & Frontend Development/threejs-lighting",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "threejs-loaders",
+      "title": "threejs-loaders",
+      "description": "Three.js asset loading - GLTF, textures, images, models, async patterns. Use when loading 3D models, textures, HDR environments, or managing loading progress.",
+      "category": "Web & Frontend Development",
+      "path": "Web & Frontend Development/threejs-loaders",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "threejs-materials",
+      "title": "threejs-materials",
+      "description": "Three.js materials - PBR, basic, phong, shader materials, material properties. Use when styling meshes, working with textures, creating custom shaders, or optimizing material performance.",
+      "category": "Web & Frontend Development",
+      "path": "Web & Frontend Development/threejs-materials",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "threejs-postprocessing",
+      "title": "threejs-postprocessing",
+      "description": "Three.js post-processing - EffectComposer, bloom, DOF, screen effects. Use when adding visual effects, color grading, blur, glow, or creating custom screen-space shaders.",
+      "category": "Web & Frontend Development",
+      "path": "Web & Frontend Development/threejs-postprocessing",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "threejs-shaders",
+      "title": "threejs-shaders",
+      "description": "Three.js shaders - GLSL, ShaderMaterial, uniforms, custom effects. Use when creating custom visual effects, modifying vertices, writing fragment shaders, or extending built-in materials.",
+      "category": "Web & Frontend Development",
+      "path": "Web & Frontend Development/threejs-shaders",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "threejs-textures",
+      "title": "threejs-textures",
+      "description": "Three.js textures - texture types, UV mapping, environment maps, texture settings. Use when working with images, UV coordinates, cubemaps, HDR environments, or texture optimization.",
+      "category": "Web & Frontend Development",
+      "path": "Web & Frontend Development/threejs-textures",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "visual-explainer",
+      "title": "visual-explainer",
+      "description": "Build polished visual explainers as zo.space pages. Creates public routes at /explain/[slug] and keeps each explainer shareable at a stable URL.",
+      "category": "Web & Frontend Development",
+      "path": "Web & Frontend Development/visual-explainer",
+      "scripts": [
+        "slugify.sh"
+      ],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md",
+        "assets/explainer-page.tsx",
+        "scripts/slugify.sh"
+      ]
+    },
+    {
+      "name": "web-artifacts-builder",
+      "title": "web-artifacts-builder",
+      "description": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state management, routing, or shadcn/ui components - not for simple single-file HTML/JSX artifacts.",
+      "category": "Web & Frontend Development",
+      "path": "Web & Frontend Development/web-artifacts-builder",
+      "scripts": [
+        "bundle-artifact.sh",
+        "init-artifact.sh",
+        "shadcn-components.tar.gz"
+      ],
+      "files": [
+        "DISPLAY.json",
+        "LICENSE.txt",
+        "SKILL.md",
+        "scripts/bundle-artifact.sh",
+        "scripts/init-artifact.sh",
+        "scripts/shadcn-components.tar.gz"
+      ]
+    },
+    {
+      "name": "web-scraper",
+      "title": "web-scraper",
+      "description": "Crawl and extract structured data from websites. Uses a tiered approach -- Zo built-ins for simple fetches, BeautifulSoup for custom parsing, Crawl4AI for deep crawls and LLM-powered extraction. Use when you need to scrape a website, extract structured data, or crawl multiple pages.",
+      "category": "Web & Frontend Development",
+      "path": "Web & Frontend Development/web-scraper",
+      "scripts": [
+        "__pycache__",
+        "scraper.py"
+      ],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md",
+        "scripts/__pycache__/scraper.cpython-312.pyc",
+        "scripts/scraper.py"
+      ]
+    },
+    {
+      "name": "webapp-testing",
+      "title": "webapp-testing",
+      "description": "Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser logs.",
+      "category": "Web & Frontend Development",
+      "path": "Web & Frontend Development/webapp-testing",
+      "scripts": [
+        "__pycache__",
+        "with_server.py"
+      ],
+      "files": [
+        "DISPLAY.json",
+        "LICENSE.txt",
+        "SKILL.md",
+        "examples/console_logging.py",
+        "examples/element_discovery.py",
+        "examples/static_html_automation.py",
+        "scripts/__pycache__/with_server.cpython-312.pyc",
+        "scripts/with_server.py"
+      ]
+    },
+    {
+      "name": "zo-space",
+      "title": "zo-space",
+      "description": "Comprehensive guide for building and managing zo.space routes (pages and APIs). Use this skill whenever creating, editing, or debugging zo.space routes. Covers architecture, available packages, patterns, limitations, and gotchas.",
+      "category": "Web & Frontend Development",
+      "path": "Web & Frontend Development/zo-space",
+      "scripts": [],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md",
+        "references/architecture.md",
+        "references/examples.md",
+        "references/packages.md",
+        "references/styling.md"
+      ]
+    },
+    {
+      "name": "zopack",
+      "title": "zopack",
+      "description": "Export and import zo.space route setups as shareable .zopack.md files. Use when the user wants to package their zo.space routes for sharing, or when they receive a .zopack.md file to deploy. Triggers on \"export my zo.space\", \"create a zopack\", \"import this zopack\", or any mention of .zopack.md files.",
+      "category": "Web & Frontend Development",
+      "path": "Web & Frontend Development/zopack",
+      "scripts": [
+        "export.ts",
+        "import.ts"
+      ],
+      "files": [
+        "DISPLAY.json",
+        "SKILL.md",
+        "scripts/export.ts",
+        "scripts/import.ts"
+      ]
+    }
+  ]
+}
