@@ -1,7 +1,7 @@
 {
   "name": "@ouwibo/awskill",
   "version": "1.0.0",
-  "description": "Universal AI agent skill arsenal for bug bounty hunters and crypto researchers.",
+  "description": "Flat, installable library of 248 AI-agent skills for security research, engineering, content, frontend, finance, productivity, SEO, and automation.",
   "license": "MIT",
   "author": "ouwibo",
   "homepage": "https://github.com/ouwibo/awskill#readme",
@@ -19,14 +19,7 @@
   "files": [
     "bin/",
     "scripts/",
-    "AI & Agent Automation/",
-    "Content & Documents/",
-    "Developer Tools/",
-    "Finance & Crypto/",
-    "Productivity & Utilities/",
-    "SEO & Marketing/",
-    "Security & Penetration Testing/",
-    "Web & Frontend Development/",
+    "skills/",
     "skills.json",
     "install.sh",
     "README.md",
@@ -36,7 +29,8 @@
     "CONTRIBUTING.md",
     "!**/__pycache__/**",
     "!**/*.pyc",
-    "!*.tgz"
+    "!*.tgz",
+    "!awskill-*.tgz"
   ],
   "scripts": {
     "awskill": "python3 scripts/awskill.py",
