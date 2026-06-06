@@ -1,39 +1,16 @@
 #!/usr/bin/env python3
 """Validate awskill repository metadata and skill files."""
 
+from __future__ import annotations
+
 import json
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-IGNORED_DIRS = {".git", "__pycache__"}
-REQUIRED_FRONTMATTER_FIELDS = ("name", "description")
+sys.path.insert(0, str(ROOT / "scripts"))
 
-
-def iter_skill_dirs():
-    for skill_md in sorted(ROOT.glob("*/*/SKILL.md")):
-        if any(part in IGNORED_DIRS for part in skill_md.parts):
-            continue
-        yield skill_md.parent
-
-
-def parse_frontmatter(skill_md):
-    text = skill_md.read_text(encoding="utf-8", errors="ignore")
-    if not text.startswith("---\n"):
-        return None, None, "missing opening frontmatter delimiter"
-
-    try:
-        raw_frontmatter, body = text[4:].split("\n---", 1)
-    except ValueError:
-        return None, None, "missing closing frontmatter delimiter"
-
-    data = {}
-    for line in raw_frontmatter.splitlines():
-        if not line.strip() or line.startswith(" "):
-            continue
-        if ":" in line:
-            key, value = line.split(":", 1)
-            data[key.strip()] = value.strip()
-    return data, body, None
+from skill_index import REQUIRED_FRONTMATTER_FIELDS, all_skills, category_counts, iter_skill_dirs, parse_frontmatter  # noqa: E402
 
 
 def validate_skill(skill_dir):
@@ -61,17 +38,40 @@ def validate_skill(skill_dir):
     return issues
 
 
+def validate_manifest(skills):
+    manifest_path = ROOT / "skills.json"
+    if not manifest_path.exists():
+        return ["missing root skills.json manifest; run scripts/tools/generate_manifest.py"]
+
+    try:
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        return [f"invalid skills.json: {exc}"]
+
+    issues = []
+    if manifest.get("total") != len(skills):
+        issues.append(f"skills.json total is {manifest.get('total')}, expected {len(skills)}")
+    manifest_names = [skill.get("name") for skill in manifest.get("skills", [])]
+    actual_names = [skill["name"] for skill in skills]
+    if sorted(manifest_names) != sorted(actual_names):
+        issues.append("skills.json skill names do not match repository skills")
+    return issues
+
+
 def main():
-    skill_dirs = list(iter_skill_dirs())
+    skill_dirs = list(iter_skill_dirs(ROOT))
+    skills = all_skills(ROOT)
     failures = []
-    categories = {}
+    categories = category_counts(skills)
 
     for skill_dir in skill_dirs:
-        category = skill_dir.parent.name
-        categories[category] = categories.get(category, 0) + 1
         issues = validate_skill(skill_dir)
         if issues:
             failures.append((skill_dir.relative_to(ROOT), issues))
+
+    manifest_issues = validate_manifest(skills)
+    if manifest_issues:
+        failures.append((Path("skills.json"), manifest_issues))
 
     print(f"Validated {len(skill_dirs)} skills across {len(categories)} categories.")
     for category, total in sorted(categories.items(), key=lambda item: (-item[1], item[0])):
