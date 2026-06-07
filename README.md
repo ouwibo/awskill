@@ -1,171 +1,137 @@
-# awskill
+```
+ █████╗ ██╗    ██╗███████╗██╗  ██╗██╗██╗     ██╗
+██╔══██╗██║    ██║██╔════╝██║ ██╔╝██║██║     ██║
+███████║██║ █╗ ██║███████╗█████╔╝ ██║██║     ██║
+██╔══██║██║███╗██║╚════██║██╔═██╗ ██║██║     ██║
+██║  ██║╚███╔███╔╝███████║██║  ██╗██║███████╗███████╗
+╚═╝  ╚═╝ ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝╚═╝╚══════╝╚══════╝
+                            245 skills · 18 categories · 1 install
+```
 
-> Universal AI agent skill arsenal for bug bounty hunters and crypto researchers.
+**Bug bounty arsenal + Web3 audit + dev tools for AI agents.**
+Drop-in for Claude Code & Codex. Tools verified, scripts sandboxed, manifest CI-checked.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Skills](https://img.shields.io/badge/skills-248-blue.svg)](#categories)
-[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](CONTRIBUTING.md)
+[![MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Skills](https://img.shields.io/badge/skills-245-blue.svg)](skills.json)
+[![CI](https://img.shields.io/badge/CI-validate-brightgreen.svg)](.github/workflows/validate.yml)
+[![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
 ---
 
-## Quick Start
-
-Install every skill as a flat list in your agent skills directory:
+## Install
 
 ```bash
 git clone https://github.com/ouwibo/awskill
-cd awskill
-bash install.sh
+cd awskill && bash install.sh
 ```
 
-By default, `install.sh` copies all 248 skills into `~/.claude/skills` without category folders. To install into Codex instead:
+> Codex instead? `AWSKILL_TARGET=codex bash install.sh`
+
+Installs 14 security binaries (with SHA256 verification), registers all 245 skills into `~/.claude/skills`, and adds `~/go/bin` to `$PATH`.
+
+---
+
+## Use
 
 ```bash
-AWSKILL_TARGET=codex bash install.sh
+/hunt target.com              # autonomous bug bounty pipeline
+/web3-audit 0xCONTRACT        # smart contract security audit
+/scope target.com             # check program scope
+/chain                        # build A→B→C exploit chains
+/triage                       # 7-question gate validation
+/report                       # H1 / Bugcrowd / Intigriti / Immunefi format
 ```
 
-If you only want to install skills without installing external security tools:
+Browse what's installed:
 
 ```bash
-python3 scripts/tools/install_skills.py --target claude --force
-python3 scripts/tools/install_skills.py --target codex --force
+python3 scripts/awskill.py --stats
+python3 scripts/awskill.py --search xss
+python3 scripts/awskill.py --cat "Web3 & Smart Contract Security"
 ```
+
+---
+
+## Web3 Spotlight 🔥
+
+A dedicated `Web3 & Smart Contract Security` category — the playbook for Immunefi/Cantina hunts:
+
+| Skill | What it covers |
+|---|---|
+| `smart-contract-vulnerabilities` | Reentrancy, integer overflow, delegatecall, signature replay, CREATE2 |
+| `defi-attack-patterns` | Flash loan, oracle manipulation, MEV, vault inflation, bridge attacks |
+| `web3-audit` | 10-bug-class methodology + Foundry PoC template + grep patterns |
+| `cmd-web3-audit` | Run the methodology end-to-end on a target |
+| `cmd-token-scan` | Meme coin rug detection — honeypot, hidden mint, fee manipulation |
+| `meme-coin-audit` | Solana/EVM token deep audit |
+| `crypto-project-research` | Chain, funding, investors, socials before you hunt |
 
 ---
 
 ## Categories
 
-| Category | Skills |
-|---|---|
-| [Security & Penetration Testing](Security%20%26%20Penetration%20Testing/) | 128 |
-| [Developer Tools](Developer%20Tools/) | 29 |
-| [Web & Frontend Development](Web%20%26%20Frontend%20Development/) | 19 |
-| [Content & Documents](Content%20%26%20Documents/) | 18 |
-| [AI & Agent Automation](AI%20%26%20Agent%20Automation/) | 17 |
-| [SEO & Marketing](SEO%20%26%20Marketing/) | 13 |
-| [Finance & Crypto](Finance%20%26%20Crypto/) | 12 |
-| [Productivity & Utilities](Productivity%20%26%20Utilities/) | 12 |
-| **Total** | **248** |
+| Category | Skills | Category | Skills |
+|---|---|---|---|
+| **Web Application Security** | 56 | **Active Directory & Windows** | 7 |
+| **Bug Bounty & Workflow** | 30 | **Cryptography & Cryptanalysis** | 6 |
+| **Developer Tools** | 28 | **Network & Infrastructure** | 6 |
+| **Web & Frontend Development** | 19 | **Productivity & Utilities** | 6 |
+| **AI & Agent Automation** | 17 | **Linux & macOS Internals** | 5 |
+| **Content & Documents** | 16 | **Mobile Security** | 3 |
+| **SEO & Marketing** | 13 | **AI & LLM Security** | 2 |
+| **Binary Exploitation & RE** | 12 | **Forensics** | 1 |
+| **Finance & Crypto** | 11 | | |
+| **Web3 & Smart Contract Security** | 7 | **Total** | **245** |
+
+[Full machine-readable index → `skills.json`](skills.json)
 
 ---
 
-## Tools Installed
+## Slash Commands
 
-| Tool | Purpose |
-|---|---|
-| `subfinder` | Subdomain discovery |
-| `httpx` | HTTP probing |
-| `nuclei` | Template-based vulnerability scanning |
-| `katana` | Web crawler |
-| `gau` | Fetch all known URLs |
-| `dnsx` | DNS toolkit |
-| `ffuf` | Fast web fuzzer |
-| `nmap` | Network scanner |
-| `dalfox` | XSS scanner |
-| `sqlmap` | SQL injection |
-| `trufflehog` | Secrets scanning |
-| `gitleaks` | Git secrets detection |
-| `slither` | Solidity static analyzer |
-| `arjun` | HTTP parameter discovery |
+```
+RECON              HUNT               REPORT
+/scope             /hunt              /triage
+/scope-aggregate   /autopilot         /validate
+/recon             /web3-audit        /chain
+/intel             /scan-cves         /report
+/surface           /param-discover    /remember
+/cloud-recon       /secrets-hunt
+/pickup            /takeover          META
+                   /token-scan        /arsenal
+                   /bypass-403        /memory-gc
+```
 
 ---
 
-## Usage
+## Built-in Tools (SHA256-verified install)
 
-### Bug Bounty Recon
-```bash
-python3 scripts/tools/scan.py target.com
-python3 scripts/tools/scan.py target.com --mode recon
-python3 scripts/tools/scan.py target.com --mode full
-python3 scripts/tools/scan.py target.com --mode xss
-python3 scripts/tools/scan.py target.com --mode sqli
-python3 scripts/tools/scan.py target.com --mode secrets
-```
-
-### Crypto / Web3 Audit
-```bash
-python3 scripts/tools/crypto_audit.py 0xCONTRACT_ADDRESS
-python3 scripts/tools/crypto_audit.py https://github.com/org/repo
-python3 scripts/tools/crypto_audit.py https://project.io
-```
-
-### Browse, Export, Install & Run Skills
-```bash
-python3 scripts/awskill.py --list
-python3 scripts/awskill.py --search xss
-python3 scripts/awskill.py --cat "Security & Penetration Testing"
-python3 scripts/awskill.py --run bug-bounty
-python3 scripts/awskill.py --install --target codex --force
-python3 scripts/awskill.py --export-flat --clean
-```
-
-`--export-flat` copies every skill out of the category folders into `dist/skills/` and writes a matching `dist/skills/skills.json` manifest, which makes the full collection easy to inspect, zip, or mirror.
-
-### Validate Repository Metadata
-```bash
-python3 scripts/tools/generate_manifest.py
-python3 scripts/tools/validate_skills.py
-python3 -m compileall -q scripts
-```
-
-The root [`skills.json`](skills.json) manifest is generated from all `SKILL.md` files and is the canonical installable list for the hundreds of skills in this repository.
+`subfinder` `httpx` `nuclei` `katana` `gau` `dnsx` `ffuf` `nmap`
+`dalfox` `sqlmap` `trufflehog` `gitleaks` `slither` `arjun`
 
 ---
 
-## Slash Commands (23)
+## Contribute
 
-| Command | Description |
-|---|---|
-| `/recon` | Full reconnaissance on a target |
-| `/hunt` | Start a bug bounty hunt |
-| `/validate` | Validate a finding |
-| `/report` | Generate a bug report |
-| `/autopilot` | Fully automated hunting |
-| `/bypass-403` | Bypass 403/401 responses |
-| `/chain` | Chain vulnerabilities |
-| `/cloud-recon` | Cloud asset discovery |
-| `/intel` | OSINT and intelligence gathering |
-| `/scope` | Define target scope |
-| `/secrets-hunt` | Hunt for exposed secrets |
-| `/takeover` | Subdomain takeover check |
-| `/token-scan` | Scan for exposed tokens |
-| `/triage` | Triage and prioritize findings |
-| `/scan-cves` | Scan for known CVEs |
-| `/param-discover` | Parameter discovery |
-| `/surface` | Attack surface mapping |
-| `/arsenal` | List available tools |
-| `/web3-audit` | Smart contract audit |
-| `/scope-aggregate` | Aggregate scope across programs |
-| `/pickup` | Resume a previous session |
-| `/remember` | Save context to memory |
-| `/memory-gc` | Clear agent memory |
+Add a skill in three steps:
+
+```bash
+mkdir -p "skills/<Category>/my-skill"
+$EDITOR  "skills/<Category>/my-skill/SKILL.md"   # write the playbook
+python3 scripts/tools/validate_skills.py         # checks frontmatter + structure
+python3 scripts/tools/generate_manifest.py       # regenerates skills.json
+```
+
+CI runs the same checks on every PR. See [CONTRIBUTING.md](CONTRIBUTING.md) for the full guide.
 
 ---
 
 ## Requirements
 
-- Python 3.8+
-- Go 1.21+ (auto-installed by `install.sh` if missing)
-- Linux / macOS
+Python 3.8+ · Go 1.21+ (auto-installed) · Linux / macOS
 
 ---
 
-## Contributing
+**For authorized security research only** — see [SECURITY.md](SECURITY.md).
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on adding skills, tools, and documentation.
-
-## Security
-
-This toolkit is for **authorized security research only**. See [SECURITY.md](SECURITY.md) for responsible use policy and vulnerability reporting.
-
-## Changelog
-
-See [CHANGELOG.md](CHANGELOG.md) for release history.
-
-## License
-
-[MIT](LICENSE) — free to use, fork, and contribute.
-
----
-
-by [ouwibo](https://github.com/ouwibo)
+[CHANGELOG](CHANGELOG.md) · [CONTRIBUTING](CONTRIBUTING.md) · [MIT](LICENSE) · `@ouwibo`

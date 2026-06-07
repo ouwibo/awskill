@@ -8,7 +8,8 @@ from pathlib import Path
 from typing import Dict, Iterator, List
 
 ROOT = Path(__file__).resolve().parents[1]
-IGNORED_ROOT_DIRS = {".git", ".github", "scripts", "dist", "__pycache__"}
+SKILLS_DIR_NAME = "skills"
+IGNORED_ROOT_DIRS = {".git", ".github", "scripts", "dist", "__pycache__", "bin"}
 REQUIRED_FRONTMATTER_FIELDS = ("name", "description")
 
 
@@ -57,9 +58,12 @@ def parse_frontmatter(skill_md: Path):
 
 
 def iter_skill_dirs(root: Path = ROOT) -> Iterator[Path]:
-    """Yield skill directories from the category/skill repository layout."""
-    for skill_md in sorted(root.glob("*/*/SKILL.md")):
-        rel_parts = skill_md.relative_to(root).parts
+    """Yield skill directories from the skills/<Category>/<skill>/ layout."""
+    skills_root = root / SKILLS_DIR_NAME
+    if not skills_root.is_dir():
+        return
+    for skill_md in sorted(skills_root.glob("*/*/SKILL.md")):
+        rel_parts = skill_md.relative_to(skills_root).parts
         if rel_parts[0] in IGNORED_ROOT_DIRS:
             continue
         yield skill_md.parent
@@ -75,11 +79,14 @@ def skill_metadata(skill_dir: Path, root: Path = ROOT) -> Dict[str, object]:
     rel_path = skill_dir.relative_to(root)
     files = sorted(str(p.relative_to(skill_dir)) for p in skill_dir.rglob("*") if p.is_file())
 
+    # rel_path is now skills/<Category>/<skill>; category is parts[1].
+    category = rel_path.parts[1] if len(rel_path.parts) > 2 else "Uncategorized"
+
     return {
         "name": skill_dir.name,
         "title": frontmatter.get("name", skill_dir.name),
         "description": frontmatter.get("description", ""),
-        "category": rel_path.parts[0] if len(rel_path.parts) > 1 else "Uncategorized",
+        "category": category,
         "path": str(rel_path),
         "scripts": scripts,
         "files": files,

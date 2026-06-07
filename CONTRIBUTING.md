@@ -7,14 +7,14 @@ Thank you for considering contributing to **awskill**. All contributions are wel
 ### Adding a New Skill
 
 1. Fork the repository
-2. Create a new directory under the appropriate category:
+2. Create a new directory under the appropriate category in `skills/`:
    ```
-   Category Name/
-   └── your-skill-name/
-       ├── SKILL.md       # required
-       ├── scripts/       # optional — executable scripts
-       └── references/    # optional — docs, API notes
+   skills/<Category Name>/your-skill-name/
+   ├── SKILL.md       # required
+   ├── scripts/       # optional — executable scripts
+   └── references/    # optional — docs, API notes
    ```
+   See the [Categories](README.md#categories) table for the canonical names.
 3. Write `SKILL.md` with valid frontmatter:
    ```yaml
    ---
@@ -25,7 +25,12 @@ Thank you for considering contributing to **awskill**. All contributions are wel
      author: your-github-handle
    ---
    ```
-4. Submit a pull request with a clear description
+4. Self-check before pushing:
+   ```bash
+   python3 scripts/tools/validate_skills.py        # frontmatter + structure
+   python3 scripts/tools/generate_manifest.py      # regenerate skills.json
+   ```
+5. Submit a pull request with a clear description. CI runs the same checks.
 
 ### Adding a Tool Script
 

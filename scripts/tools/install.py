@@ -1,10 +1,14 @@
 #!/usr/bin/env python3
 """
-install.sh — awskill toolkit installer
-Installs all bug bounty + crypto scanners and registers skills/commands.
+install.py — awskill toolkit installer
+Installs bug bounty + crypto scanners and registers all skills.
 Usage: python3 scripts/tools/install.py [--tools] [--skills] [--all]
 """
 import os, sys, subprocess, shutil, platform
+from pathlib import Path
+
+# Allow imports from scripts/
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 GOBIN = os.path.expanduser("~/go/bin")
 os.makedirs(GOBIN, exist_ok=True)
@@ -95,26 +99,22 @@ def install_pip_tools():
         ok(name) if s else fail(f"{name} — fix: pip3 install {pkg}")
 
 def install_skills():
-    base = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-    skills_dst = os.path.expanduser("~/.claude/skills")
-    cmds_dst = os.path.expanduser("~/.claude/commands")
-    os.makedirs(skills_dst, exist_ok=True)
-    os.makedirs(cmds_dst, exist_ok=True)
-
-    sec_path = os.path.join(base, "Security & Penetration Testing")
-    crypto_path = os.path.join(base, "Finance & Crypto")
-    
-    count = 0
-    for cat_path in [sec_path, crypto_path]:
-        if not os.path.isdir(cat_path): continue
-        for skill in os.listdir(cat_path):
-            sp = os.path.join(cat_path, skill)
-            dp = os.path.join(skills_dst, skill)
-            if os.path.isdir(sp) and os.path.exists(f"{sp}/SKILL.md"):
-                if not os.path.exists(dp):
-                    shutil.copytree(sp, dp)
-                    count += 1
-    ok(f"{count} skills registered to ~/.claude/skills")
+    """Register every skill in the manifest to ~/.claude/skills (flat)."""
+    from skill_index import all_skills, ROOT as REPO_ROOT
+    skills_dst = Path("~/.claude/skills").expanduser()
+    skills_dst.mkdir(parents=True, exist_ok=True)
+    installed = skipped = 0
+    for skill in all_skills(REPO_ROOT):
+        src = REPO_ROOT / str(skill["path"])
+        dst = skills_dst / str(skill["name"])
+        if not src.is_dir():
+            continue
+        if dst.exists():
+            skipped += 1
+            continue
+        shutil.copytree(src, dst)
+        installed += 1
+    ok(f"{installed} skills registered to {skills_dst} (skipped {skipped} existing)")
 
 def verify():
     print("\n  Verification:")

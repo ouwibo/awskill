@@ -13,3 +13,7 @@ results/
 *.log
 /tmp/
 dist/
+
+# npm pack / release artifacts — these are generated, not source
+*.tgz
+awskill-*.tgz
