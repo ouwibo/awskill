@@ -1,0 +1,38 @@
+name: validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Compile all Python sources
+        run: python -m compileall -q scripts
+
+      - name: Validate skills (frontmatter + structure)
+        run: python scripts/tools/validate_skills.py
+
+      - name: Manifest matches disk layout
+        run: |
+          python scripts/tools/generate_manifest.py --output /tmp/regen.json
+          # Normalize both manifests with jq -S (sorted keys) and diff.
+          sudo apt-get install -y jq
+          if ! diff <(jq -S . skills.json) <(jq -S . /tmp/regen.json); then
+            echo "::error::skills.json is stale. Run: python scripts/tools/generate_manifest.py"
+            exit 1
+          fi
+
+      - name: Shell scripts pass shellcheck
+        run: |
+          sudo apt-get install -y shellcheck
+          shellcheck install.sh
